@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Busine
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{23CCD63A-98EF-4D08-B5F8-31A1C839BB0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "TestConsole\Demo.csproj", "{1A83A216-A7EB-46B3-811B-C98C22697775}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "Demo\Demo.csproj", "{1A83A216-A7EB-46B3-811B-C98C22697775}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
