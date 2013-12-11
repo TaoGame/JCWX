@@ -21,7 +21,6 @@ namespace WX.Model
                 this.ToUserName = xml.Element("ToUserName").Value;
                 this.CreateTime = Int64.Parse(xml.Element("CreateTime").Value);
                 this.MsgId = Int64.Parse(xml.Element("MsgId").Value);
-                //this.MsgType = (MsgType)Enum.Parse(typeof(MsgType), xml.Element("MsgType").Value, true);
             }
             catch (Exception ex)
             {

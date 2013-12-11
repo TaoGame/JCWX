@@ -37,13 +37,13 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HandlerMessage\EventMessageHandler.cs" />
-    <Compile Include="HandlerMessage\TextMessageHander.cs" />
+    <Compile Include="HandlerMessage\NewsMessageHandler.cs" />
+    <Compile Include="HandlerMessage\TextMessageHandler.cs" />
     <Compile Include="MyMessageRole.cs" />
     <Compile Include="MyTextRequest.cs" />
     <Compile Include="Program.cs" />

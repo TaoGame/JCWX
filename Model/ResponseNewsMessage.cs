@@ -6,6 +6,7 @@ using System.Xml.Serialization;
 
 namespace WX.Model
 {
+    [XmlRoot("xml")]
     public class ResponseNewsMessage : ResponseMessage
     {
         public ResponseNewsMessage() { }

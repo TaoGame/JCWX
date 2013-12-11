@@ -8,7 +8,7 @@ using WX.Model;
 
 namespace TestConsole.HandlerMessage
 {
-    public class TextMessageHander : IMessageHandler
+    public class TextMessageHandler : IMessageHandler
     {
         public ResponseMessage HandlerRequestMessage(XElement xml)
         {

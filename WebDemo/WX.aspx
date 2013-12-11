@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WX.aspx.cs" Inherits="WebDemo.WX" %>

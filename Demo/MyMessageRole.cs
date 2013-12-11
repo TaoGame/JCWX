@@ -33,7 +33,7 @@ namespace TestConsole
             switch (msgType)
             {
                 case MsgType.Text:
-                    messageHandler = new TextMessageHander();
+                    messageHandler = new NewsMessageHandler();
                     break;
                 case MsgType.Event:
                     messageHandler = new EventMessageHandler();

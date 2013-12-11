@@ -8,6 +8,7 @@ using System.Xml.Serialization;
 namespace WX.Model
 {
     [Serializable]
+    [XmlRoot("xml")]
     public abstract class ResponseMessage : WXMessage
     {
         public ResponseMessage() { }
