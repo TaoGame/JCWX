@@ -55,11 +55,19 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\default_small.jpg" />
+    <Content Include="Images\default_Title.jpg" />
     <Content Include="Web.config" />
     <Content Include="WX.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Code\Handler\TextMessageHandler.cs" />
+    <Compile Include="App_Code\Handler\CnblogsArticleNewsMessageHandler.cs" />
+    <Compile Include="App_Code\CnBlogsFeed.cs" />
+    <Compile Include="App_Code\Role\EventMessageRole.cs" />
     <Compile Include="App_Code\MyLog.cs" />
+    <Compile Include="App_Code\Handler\SubScribeEventMessageHandler.cs" />
+    <Compile Include="App_Code\Handler\UnSubScribeEventMessageHandler.cs" />
     <Compile Include="WX.aspx.cs">
       <DependentUpon>WX.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -67,11 +75,11 @@
     <Compile Include="WX.aspx.designer.cs">
       <DependentUpon>WX.aspx</DependentUpon>
     </Compile>
-    <Compile Include="App_Code\WebMessageRole.cs" />
-    <Compile Include="App_Code\DefaultMessageHandler.cs" />
-    <Compile Include="App_Code\MsgTypeMessageRole.cs" />
-    <Compile Include="App_Code\TextMessageRole.cs" />
-    <Compile Include="App_Code\CnblogsTextMessageHandler.cs" />
+    <Compile Include="App_Code\Role\WebMessageRole.cs" />
+    <Compile Include="App_Code\Handler\DefaultMessageHandler.cs" />
+    <Compile Include="App_Code\Role\MsgTypeMessageRole.cs" />
+    <Compile Include="App_Code\Role\TextMessageRole.cs" />
+    <Compile Include="App_Code\Handler\CnblogsTextMessageHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -11,10 +11,10 @@ namespace WebDemo.App_Code
     public class CnblogsTextMessageHandler : IMessageHandler
     {
         private static string s_cnblogsMsg = "HI，博客园的园友，欢迎来到JamesYing的微信世界，请关注我，http://inday.cnblogs.com";
-        public ResponseMessage HandlerRequestMessage(XElement xml)
+        public ResponseMessage HandlerRequestMessage(MiddleMessage msg)
         {
-            var request = new RequestTextMessage(xml);
-            return new ResponseTextMessage(request)
+            
+            return new ResponseTextMessage(msg.RequestMessage)
             {
                 CreateTime = DateTime.Now.Ticks,
                 Content = s_cnblogsMsg

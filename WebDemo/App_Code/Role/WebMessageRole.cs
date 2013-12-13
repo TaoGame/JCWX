@@ -10,13 +10,11 @@ namespace WebDemo.App_Code
 {
     public class WebMessageRole : IMessageRole
     {
-        public IMessageHandler MessageRole(XElement xml)
+        public IMessageHandler MessageRole(MiddleMessage msg)
         {
             try
             {
-                var msgType = (MsgType)Enum.Parse(typeof(MsgType), xml.Element("MsgType").Value, true);
-
-                return new MsgTypeMessageRole(msgType).MessageRole(xml);
+                return new MsgTypeMessageRole().MessageRole(msg);
             }
             catch
             {

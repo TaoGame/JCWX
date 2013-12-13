@@ -9,9 +9,15 @@ namespace WebDemo.App_Code
 {
     public class TextMessageRole : IMessageRole
     {
-        public IMessageHandler MessageRole(XElement xml)
+        public IMessageHandler MessageRole(MiddleMessage msg)
         {
-            var request = new RequestTextMessage(xml);
+            var request = (RequestTextMessage)msg.RequestMessage;
+
+            if (request.Content.IndexOf("博客园文章") > -1)
+            {
+                return new CnblogsArticleNewsMessageHandler();
+            }
+
             if (request.Content.IndexOf("博客园") > -1)
             {
                 return new CnblogsTextMessageHandler();

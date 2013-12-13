@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Article.cs" />
+    <Compile Include="MiddleMessage.cs" />
     <Compile Include="MessageEventArgs.cs" />
     <Compile Include="MessageEventHandler.cs" />
     <Compile Include="RequestClickEventMessage.cs" />

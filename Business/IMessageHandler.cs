@@ -9,6 +9,6 @@ namespace WX.Business
 {
     public interface IMessageHandler
     {
-        ResponseMessage HandlerRequestMessage(XElement xml);
+        ResponseMessage HandlerRequestMessage(MiddleMessage message);
     }
 }

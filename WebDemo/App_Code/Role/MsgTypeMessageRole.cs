@@ -10,19 +10,14 @@ namespace WebDemo.App_Code
 {
     public class MsgTypeMessageRole : IMessageRole
     {
-        private MsgType MsgType { get; set; }
-
-        public MsgTypeMessageRole(MsgType msgType)
+        public IMessageHandler MessageRole(MiddleMessage msg)
         {
-            this.MsgType = msgType;
-        }
-
-        public IMessageHandler MessageRole(XElement xml)
-        {
-            switch (MsgType)
+            switch (msg.RequestMessage.MsgType)
             {
                 case MsgType.Text:
-                    return new TextMessageRole().MessageRole(xml);
+                    return new TextMessageRole().MessageRole(msg);
+                case MsgType.Event:
+                    return new EventMessageRole().MessageRole(msg);
                 default:
                     return new DefaultMessageHandler();
             }

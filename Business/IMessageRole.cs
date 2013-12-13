@@ -4,11 +4,12 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Xml.Linq;
+using WX.Model;
 
 namespace WX.Business
 {
     public interface IMessageRole
     {
-        IMessageHandler MessageRole(XElement xml);
+        IMessageHandler MessageRole(MiddleMessage message);
     }
 }

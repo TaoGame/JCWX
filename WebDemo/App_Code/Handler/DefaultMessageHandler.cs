@@ -12,14 +12,10 @@ namespace WebDemo.App_Code
     {
         private static string s_defaultMsg = "对不起，亲，我还无法了解您的需求，我会不断改进的！";
 
-        public ResponseMessage HandlerRequestMessage(XElement xml)
+        public ResponseMessage HandlerRequestMessage(MiddleMessage msg)
         {
-            var fromUserName = xml.Element("ToUserName").Value;
-            var toUserName = xml.Element("FromUserName").Value;
-            return new ResponseTextMessage
+            return new ResponseTextMessage(msg.RequestMessage)
             {
-                FromUserName = fromUserName,
-                ToUserName = toUserName,
                 CreateTime = DateTime.Now.Ticks,
                 Content = s_defaultMsg
             };
