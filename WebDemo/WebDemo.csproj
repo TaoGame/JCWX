@@ -61,13 +61,6 @@
     <Content Include="WX.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Code\Handler\TextMessageHandler.cs" />
-    <Compile Include="App_Code\Handler\CnblogsArticleNewsMessageHandler.cs" />
-    <Compile Include="App_Code\CnBlogsFeed.cs" />
-    <Compile Include="App_Code\Role\EventMessageRole.cs" />
-    <Compile Include="App_Code\MyLog.cs" />
-    <Compile Include="App_Code\Handler\SubScribeEventMessageHandler.cs" />
-    <Compile Include="App_Code\Handler\UnSubScribeEventMessageHandler.cs" />
     <Compile Include="WX.aspx.cs">
       <DependentUpon>WX.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -75,11 +68,6 @@
     <Compile Include="WX.aspx.designer.cs">
       <DependentUpon>WX.aspx</DependentUpon>
     </Compile>
-    <Compile Include="App_Code\Role\WebMessageRole.cs" />
-    <Compile Include="App_Code\Handler\DefaultMessageHandler.cs" />
-    <Compile Include="App_Code\Role\MsgTypeMessageRole.cs" />
-    <Compile Include="App_Code\Role\TextMessageRole.cs" />
-    <Compile Include="App_Code\Handler\CnblogsTextMessageHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -91,10 +79,26 @@
       <Project>{23ccd63a-98ef-4d08-b5f8-31a1c839bb0b}</Project>
       <Name>Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WebClasses\WebClasses.csproj">
+      <Project>{7167ffe5-2c16-4466-aaed-2b4107974bae}</Project>
+      <Name>WebClasses</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Code\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'librelease|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />

@@ -30,6 +30,15 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'librelease|AnyCPU'">
+    <OutputPath>bin\librelease\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -39,30 +48,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Article.cs" />
+    <Compile Include="Response\Article.cs" />
     <Compile Include="MiddleMessage.cs" />
-    <Compile Include="MessageEventArgs.cs" />
-    <Compile Include="MessageEventHandler.cs" />
-    <Compile Include="RequestClickEventMessage.cs" />
-    <Compile Include="RequestEventMessage.cs" />
-    <Compile Include="RequestImageMessage.cs" />
-    <Compile Include="RequestLinkMessage.cs" />
-    <Compile Include="RequestLocationEventMessage.cs" />
-    <Compile Include="RequestLocationMessage.cs" />
-    <Compile Include="RequestQREventMessage.cs" />
-    <Compile Include="RequestTextMessage.cs" />
-    <Compile Include="RequestVideoMessage.cs" />
-    <Compile Include="RequestVoiceMessage.cs" />
-    <Compile Include="ResponseImageMessage.cs" />
-    <Compile Include="ResponseMessage.cs" />
-    <Compile Include="ResponseMusicMessage.cs" />
-    <Compile Include="ResponseNewsMessage.cs" />
-    <Compile Include="ResponseTextMessage.cs" />
-    <Compile Include="ResponseVideoMessage.cs" />
-    <Compile Include="ResponseVoiceMessage.cs" />
+    <Compile Include="Request\RequestClickEventMessage.cs" />
+    <Compile Include="Request\RequestEventMessage.cs" />
+    <Compile Include="Request\RequestImageMessage.cs" />
+    <Compile Include="Request\RequestLinkMessage.cs" />
+    <Compile Include="Request\RequestLocationEventMessage.cs" />
+    <Compile Include="Request\RequestLocationMessage.cs" />
+    <Compile Include="Request\RequestQREventMessage.cs" />
+    <Compile Include="Request\RequestTextMessage.cs" />
+    <Compile Include="Request\RequestVideoMessage.cs" />
+    <Compile Include="Request\RequestVoiceMessage.cs" />
+    <Compile Include="Response\ResponseImageMessage.cs" />
+    <Compile Include="Response\ResponseMessage.cs" />
+    <Compile Include="Response\ResponseMusicMessage.cs" />
+    <Compile Include="Response\ResponseNewsMessage.cs" />
+    <Compile Include="Response\ResponseTextMessage.cs" />
+    <Compile Include="Response\ResponseVideoMessage.cs" />
+    <Compile Include="Response\ResponseVoiceMessage.cs" />
     <Compile Include="WXEnum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RequestMessage.cs" />
+    <Compile Include="Request\RequestMessage.cs" />
     <Compile Include="WXMessage.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

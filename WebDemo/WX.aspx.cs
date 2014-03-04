@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml;
 using System.Xml.Linq;
-using WebDemo.App_Code;
+using WX.Demo.WebClasses;
 using WX.Model;
 
 namespace WebDemo
