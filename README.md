@@ -11,10 +11,10 @@
 
 ---------------------------------------------------------------------------
 
-快速开发系列教程：
-一、[对微信公众平台开发的消息处理](http://www.cnblogs.com/inday/p/weixin-dev-msg-Question.html)
-二、[快速开发微信公众平台框架---简介](http://www.cnblogs.com/inday/p/weixin-public-platform.html)
-三、[建立微信公众平台测试账号](http://www.cnblogs.com/inday/p/weixin-public-platform-test-account.html)
-四、[体验微信公众平台快速开发框架](http://www.cnblogs.com/inday/p/wx-publicform-quick-framework-webdemo.html)
-五、[利用快速开发框架，快速搭建微信浏览博客园首页文章](http://www.cnblogs.com/inday/p/weixin-publicf-platform-cnblogs.html)
-六、[微信快速开发框架（WXPP QuickFramework）V2.0版本上线--源码已更新至github](http://www.cnblogs.com/inday/p/wxpp-quick-framework-v-2.html)
+快速开发系列教程：<br />
+一、[对微信公众平台开发的消息处理](http://www.cnblogs.com/inday/p/weixin-dev-msg-Question.html)<br />
+二、[快速开发微信公众平台框架---简介](http://www.cnblogs.com/inday/p/weixin-public-platform.html)<br />
+三、[建立微信公众平台测试账号](http://www.cnblogs.com/inday/p/weixin-public-platform-test-account.html)<br />
+四、[体验微信公众平台快速开发框架](http://www.cnblogs.com/inday/p/wx-publicform-quick-framework-webdemo.html)<br />
+五、[利用快速开发框架，快速搭建微信浏览博客园首页文章](http://www.cnblogs.com/inday/p/weixin-publicf-platform-cnblogs.html)<br />
+六、[微信快速开发框架（WXPP QuickFramework）V2.0版本上线--源码已更新至github](http://www.cnblogs.com/inday/p/wxpp-quick-framework-v-2.html)<br />
