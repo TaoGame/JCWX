@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{23CCD63A-98EF-4D08-B5F8-31A1C839BB0B}</ProjectGuid>
+    <ProjectGuid>{2DE1B569-2437-47E0-AA51-84CDCCB2968A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WX.Model</RootNamespace>
-    <AssemblyName>JCSoft.WX.Model</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <RootNamespace>FrameworkCoreTest</RootNamespace>
+    <AssemblyName>FrameworkCoreTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,34 +29,47 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'librelease|AnyCPU'">
-    <OutputPath>bin\librelease\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.2\lib\net35\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Moq">
+      <HintPath>..\..\packages\Moq.4.2.1402.2112\lib\net40\Moq.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="xunit">
+      <HintPath>..\..\packages\xunit.1.9.2\lib\net20\xunit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccessTokenTest.cs" />
+    <Compile Include="BaseTest.cs" />
+    <Compile Include="GroupCreateTest.cs" />
+    <Compile Include="GroupsGetIdTest.cs" />
+    <Compile Include="GroupsMembersUpdateTest.cs" />
+    <Compile Include="GroupsQueryTest.cs" />
+    <Compile Include="GroupsUpdateTest.cs" />
+    <Compile Include="MediaUploadNewsTest.cs" />
+    <Compile Include="MenuCreateTest.cs" />
+    <Compile Include="MockPostApiBaseTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserGetTest.cs" />
+    <Compile Include="UserInfoTest.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Business\WXFramework.csproj">
+      <Project>{5765cfa5-1892-4a06-81a8-f5e4c8a28dff}</Project>
+      <Name>WXFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>xcopy /r /y $(TargetPath) $(ProjectDir)..\Bin\</PostBuildEvent>
-  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5765CFA5-1892-4A06-81A8-F5E4C8A28DFF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WX.Framework</RootNamespace>
+    <AssemblyName>JCSoft.WX.Framework</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'librelease|AnyCPU'">
+    <OutputPath>bin\librelease\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.2\lib\net35\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApiAccessTokenManager.cs" />
+    <Compile Include="IMessageHandler.cs" />
+    <Compile Include="IMessageRole.cs" />
+    <Compile Include="Model\ApiRequests\AccessTokenRequest.cs" />
+    <Compile Include="Model\ApiRequests\ApiRequest.cs" />
+    <Compile Include="Model\ApiRequests\GroupsCreateRequest.cs" />
+    <Compile Include="Model\ApiRequests\GroupsGetIdRequest.cs" />
+    <Compile Include="Model\ApiRequests\GroupsMembersUpdateRequest.cs" />
+    <Compile Include="Model\ApiRequests\GroupsQueryRequest.cs" />
+    <Compile Include="Model\ApiRequests\GroupsUpdateRequest.cs" />
+    <Compile Include="Model\ApiRequests\MediaUploadNewsRequest.cs" />
+    <Compile Include="Model\ApiRequests\MenuCreateRequest.cs" />
+    <Compile Include="Model\ApiRequests\MenuDeleteRequest.cs" />
+    <Compile Include="Model\ApiRequests\MenuGetRequest.cs" />
+    <Compile Include="Model\ApiRequests\MessageMassDeleteRequest.cs" />
+    <Compile Include="Model\ApiRequests\MessageMassSendAllRequest.cs" />
+    <Compile Include="Model\ApiRequests\MessageMassSendRequest.cs" />
+    <Compile Include="Model\ApiRequests\QrcodeCreateRequest.cs" />
+    <Compile Include="Model\ApiRequests\UserGetRequest.cs" />
+    <Compile Include="Model\ApiRequests\UserInfoRequest.cs" />
+    <Compile Include="Model\ApiResponses\AccessTokenResponse.cs" />
+    <Compile Include="Model\ApiResponses\ApiResponse.cs" />
+    <Compile Include="Api\DefaultApiClient.cs" />
+    <Compile Include="Api\IApiClient.cs" />
+    <Compile Include="Model\ApiResponses\GroupCreateResponse.cs" />
+    <Compile Include="Model\ApiResponses\GroupsGetIdResponse.cs" />
+    <Compile Include="Model\ApiResponses\GroupsMembersUpdateResponse.cs" />
+    <Compile Include="Model\ApiResponses\GroupsQueryResponse.cs" />
+    <Compile Include="Model\ApiResponses\GroupsUpdateResponse.cs" />
+    <Compile Include="Model\ApiResponses\MediaUploadNewsResponse.cs" />
+    <Compile Include="Model\ApiResponses\MenuCreateResponse.cs" />
+    <Compile Include="Model\ApiResponses\MenuDeleteResponse.cs" />
+    <Compile Include="Model\ApiResponses\MenuGetResponse.cs" />
+    <Compile Include="Model\ApiResponses\MessageMassDeleteResponse.cs" />
+    <Compile Include="Model\ApiResponses\MessageMassSendResponse.cs" />
+    <Compile Include="Model\ApiResponses\MessageMassSendAllResponse.cs" />
+    <Compile Include="Model\ApiResponses\QrcodeCreateResponse.cs" />
+    <Compile Include="Model\ApiResponses\UserGetResponse.cs" />
+    <Compile Include="Model\ApiResponses\UserInfoResponse.cs" />
+    <Compile Include="Model\AppIdentication.cs" />
+    <Compile Include="Model\ClickButton.cs" />
+    <Compile Include="Model\Exceptions\WXApiException.cs" />
+    <Compile Include="Model\Group.cs" />
+    <Compile Include="Model\MiddleMessage.cs" />
+    <Compile Include="Model\Request\RequestClickEventMessage.cs" />
+    <Compile Include="Model\Request\RequestEventMessage.cs" />
+    <Compile Include="Model\Request\RequestImageMessage.cs" />
+    <Compile Include="Model\Request\RequestLinkMessage.cs" />
+    <Compile Include="Model\Request\RequestLocationEventMessage.cs" />
+    <Compile Include="Model\Request\RequestLocationMessage.cs" />
+    <Compile Include="Model\Request\RequestMassSendEventMessage.cs" />
+    <Compile Include="Model\Request\RequestMessage.cs" />
+    <Compile Include="Model\Request\RequestQREventMessage.cs" />
+    <Compile Include="Model\Request\RequestTextMessage.cs" />
+    <Compile Include="Model\Request\RequestVideoMessage.cs" />
+    <Compile Include="Model\Request\RequestVoiceMessage.cs" />
+    <Compile Include="Model\Response\Article.cs" />
+    <Compile Include="Model\Response\ResponseImageMessage.cs" />
+    <Compile Include="Model\Response\ResponseMessage.cs" />
+    <Compile Include="Model\Response\ResponseMusicMessage.cs" />
+    <Compile Include="Model\Response\ResponseNewsMessage.cs" />
+    <Compile Include="Model\Response\ResponseTextMessage.cs" />
+    <Compile Include="Model\Response\ResponseVideoMessage.cs" />
+    <Compile Include="Model\Response\ResponseVoiceMessage.cs" />
+    <Compile Include="Model\WXEnum.cs" />
+    <Compile Include="Model\WXJsonResult.cs" />
+    <Compile Include="Model\WXMessage.cs" />
+    <Compile Include="NotHandlerMessage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /r /y $(TargetPath) $(ProjectDir)..\Bin\</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
