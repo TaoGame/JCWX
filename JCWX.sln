@@ -1,10 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{5765CFA5-1892-4A06-81A8-F5E4C8A28DFF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{23CCD63A-98EF-4D08-B5F8-31A1C839BB0B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebDemo", "WebDemo\WebDemo.csproj", "{72472759-0504-49E8-A289-F12E71A93181}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "demo", "demo", "{8AB866F7-4EAA-44EF-AD67-7CB4CF12FA72}"
@@ -13,6 +9,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{B1E93B15-EB4
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebClasses", "WebClasses\WebClasses.csproj", "{7167FFE5-2C16-4466-AAED-2B4107974BAE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{845B1649-482C-4C6E-97B7-0F6C320DCCEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameworkCoreTest", "test\FrameworkCoreTest\FrameworkCoreTest.csproj", "{2DE1B569-2437-47E0-AA51-84CDCCB2968A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WXFramework", "Business\WXFramework.csproj", "{5765CFA5-1892-4A06-81A8-F5E4C8A28DFF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,19 +22,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5765CFA5-1892-4A06-81A8-F5E4C8A28DFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5765CFA5-1892-4A06-81A8-F5E4C8A28DFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5765CFA5-1892-4A06-81A8-F5E4C8A28DFF}.librelease|Any CPU.ActiveCfg = librelease|Any CPU
-		{5765CFA5-1892-4A06-81A8-F5E4C8A28DFF}.librelease|Any CPU.Build.0 = librelease|Any CPU
-		{5765CFA5-1892-4A06-81A8-F5E4C8A28DFF}.librelease|Any CPU.Deploy.0 = librelease|Any CPU
-		{5765CFA5-1892-4A06-81A8-F5E4C8A28DFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5765CFA5-1892-4A06-81A8-F5E4C8A28DFF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{23CCD63A-98EF-4D08-B5F8-31A1C839BB0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{23CCD63A-98EF-4D08-B5F8-31A1C839BB0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{23CCD63A-98EF-4D08-B5F8-31A1C839BB0B}.librelease|Any CPU.ActiveCfg = librelease|Any CPU
-		{23CCD63A-98EF-4D08-B5F8-31A1C839BB0B}.librelease|Any CPU.Build.0 = librelease|Any CPU
-		{23CCD63A-98EF-4D08-B5F8-31A1C839BB0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{23CCD63A-98EF-4D08-B5F8-31A1C839BB0B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{72472759-0504-49E8-A289-F12E71A93181}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{72472759-0504-49E8-A289-F12E71A93181}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72472759-0504-49E8-A289-F12E71A93181}.librelease|Any CPU.ActiveCfg = librelease|Any CPU
@@ -43,15 +32,27 @@ Global
 		{7167FFE5-2C16-4466-AAED-2B4107974BAE}.librelease|Any CPU.ActiveCfg = librelease|Any CPU
 		{7167FFE5-2C16-4466-AAED-2B4107974BAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7167FFE5-2C16-4466-AAED-2B4107974BAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DE1B569-2437-47E0-AA51-84CDCCB2968A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DE1B569-2437-47E0-AA51-84CDCCB2968A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DE1B569-2437-47E0-AA51-84CDCCB2968A}.librelease|Any CPU.ActiveCfg = Release|Any CPU
+		{2DE1B569-2437-47E0-AA51-84CDCCB2968A}.librelease|Any CPU.Build.0 = Release|Any CPU
+		{2DE1B569-2437-47E0-AA51-84CDCCB2968A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DE1B569-2437-47E0-AA51-84CDCCB2968A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5765CFA5-1892-4A06-81A8-F5E4C8A28DFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5765CFA5-1892-4A06-81A8-F5E4C8A28DFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5765CFA5-1892-4A06-81A8-F5E4C8A28DFF}.librelease|Any CPU.ActiveCfg = librelease|Any CPU
+		{5765CFA5-1892-4A06-81A8-F5E4C8A28DFF}.librelease|Any CPU.Build.0 = librelease|Any CPU
+		{5765CFA5-1892-4A06-81A8-F5E4C8A28DFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5765CFA5-1892-4A06-81A8-F5E4C8A28DFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{23CCD63A-98EF-4D08-B5F8-31A1C839BB0B} = {B1E93B15-EB4F-493D-B309-E2F53016F0D1}
 		{5765CFA5-1892-4A06-81A8-F5E4C8A28DFF} = {B1E93B15-EB4F-493D-B309-E2F53016F0D1}
 		{72472759-0504-49E8-A289-F12E71A93181} = {8AB866F7-4EAA-44EF-AD67-7CB4CF12FA72}
 		{7167FFE5-2C16-4466-AAED-2B4107974BAE} = {8AB866F7-4EAA-44EF-AD67-7CB4CF12FA72}
+		{2DE1B569-2437-47E0-AA51-84CDCCB2968A} = {845B1649-482C-4C6E-97B7-0F6C320DCCEC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		VisualSVNWorkingCopyRoot = .
