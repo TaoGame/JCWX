@@ -15,19 +15,10 @@ namespace WX.Model
 
         public RequestMessage(XElement xml)
         {
-            try
-            {
-                this.FromUserName = xml.Element("FromUserName").Value;
-                this.ToUserName = xml.Element("ToUserName").Value;
-                this.CreateTime = Int64.Parse(xml.Element("CreateTime").Value);
-                this.MsgId = Int64.Parse(xml.Element("MsgId").Value);
-            }
-            catch (Exception ex)
-            {
-#if DEBUG
-                Console.WriteLine(ex.ToString());
-#endif
-            }
+            this.FromUserName = xml.Element("FromUserName").Value;
+            this.ToUserName = xml.Element("ToUserName").Value;
+            this.CreateTime = Int64.Parse(xml.Element("CreateTime").Value);
+            this.MsgId = xml.Element("MsgId") != null ? Int64.Parse(xml.Element("MsgId").Value) : 0;
         }
 
         public static T Deserializ<T>(Stream stream)

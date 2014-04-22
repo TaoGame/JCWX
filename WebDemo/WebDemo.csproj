@@ -71,6 +71,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Business\WXFramework.csproj">
+      <Project>{5765cfa5-1892-4a06-81a8-f5e4c8a28dff}</Project>
+      <Name>WXFramework</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WebClasses\WebClasses.csproj">
       <Project>{7167ffe5-2c16-4466-aaed-2b4107974bae}</Project>
       <Name>WebClasses</Name>

@@ -64,6 +64,12 @@
     <Compile Include="Roles\TextMessageRole.cs" />
     <Compile Include="Roles\WebMessageRole.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Business\WXFramework.csproj">
+      <Project>{5765cfa5-1892-4a06-81a8-f5e4c8a28dff}</Project>
+      <Name>WXFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
