@@ -14,6 +14,6 @@ namespace WX.Model.ApiResponses
     public class Menu
     {
         [JsonProperty("button")]
-        public ClickButton Buttons { get; set; }
+        public IEnumerable<ClickButton> Buttons { get; set; }
     }
 }
