@@ -27,4 +27,12 @@ namespace WX.Model
         Click,
         MASSSENDJOBFINISH
     }
+
+    public enum MediaType
+    {
+        Image,
+        Voice,
+        Video,
+        Thumb
+    }
 }
