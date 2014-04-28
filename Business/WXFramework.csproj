@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiAccessTokenManager.cs" />
+    <Compile Include="Common\HttpHelper.cs" />
     <Compile Include="IMessageHandler.cs" />
     <Compile Include="IMessageRole.cs" />
     <Compile Include="Model\ApiRequests\AccessTokenRequest.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="Model\ApiRequests\GroupsMembersUpdateRequest.cs" />
     <Compile Include="Model\ApiRequests\GroupsQueryRequest.cs" />
     <Compile Include="Model\ApiRequests\GroupsUpdateRequest.cs" />
+    <Compile Include="Model\ApiRequests\MediaGetRequest.cs" />
     <Compile Include="Model\ApiRequests\MediaUploadNewsRequest.cs" />
     <Compile Include="Model\ApiRequests\MediaUploadRequest.cs" />
     <Compile Include="Model\ApiRequests\MenuCreateRequest.cs" />
@@ -82,6 +84,7 @@
     <Compile Include="Model\ApiResponses\GroupsMembersUpdateResponse.cs" />
     <Compile Include="Model\ApiResponses\GroupsQueryResponse.cs" />
     <Compile Include="Model\ApiResponses\GroupsUpdateResponse.cs" />
+    <Compile Include="Model\ApiResponses\MediaGetResponse.cs" />
     <Compile Include="Model\ApiResponses\MediaUploadNewsResponse.cs" />
     <Compile Include="Model\ApiResponses\MediaUploadResponse.cs" />
     <Compile Include="Model\ApiResponses\MenuCreateResponse.cs" />

@@ -16,6 +16,8 @@ namespace WX.Model.ApiResponses
             }
         }
 
+        
+
         [JsonProperty("errcode")]
         public int ErrorCode { get; set; }
 

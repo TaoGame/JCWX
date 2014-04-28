@@ -26,7 +26,7 @@ namespace FrameworkCoreTest
 
         protected Mock<DefaultApiClient> mock_client = new Mock<DefaultApiClient>();
 
-        public string GetCurrentToken()
+        public virtual string GetCurrentToken()
         {
             if (File.Exists(tokenfile))
             {

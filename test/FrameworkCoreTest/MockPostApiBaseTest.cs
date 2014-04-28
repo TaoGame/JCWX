@@ -12,7 +12,7 @@ namespace FrameworkCoreTest
         where TRequest : ApiRequest<TResponse>
         where TResponse : ApiResponse
     {
-
+        protected static string s_errmsg = "{\"errcode\":40007,\"errmsg\":\"invalid media_id\"}";
         private TRequest m_request = null;
         public TRequest Request
         {
@@ -29,11 +29,20 @@ namespace FrameworkCoreTest
 
         protected abstract TRequest InitRequestObject();
 
+        protected bool IsMock { get; set; }
+
         public void MockSetup(bool errResult)
         {
             mock_client.Setup(d => d.DoExecute(Request)).Returns(GetReturnResult(errResult));
         }
 
         protected abstract string GetReturnResult(bool errResult);
+
+        public override string GetCurrentToken()
+        {
+            if (IsMock)
+                return "123";
+            return base.GetCurrentToken();
+        }
     }
 }

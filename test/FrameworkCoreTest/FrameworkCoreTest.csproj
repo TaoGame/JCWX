@@ -52,7 +52,9 @@
     <Compile Include="GroupsMembersUpdateTest.cs" />
     <Compile Include="GroupsQueryTest.cs" />
     <Compile Include="GroupsUpdateTest.cs" />
+    <Compile Include="MediaGetTest.cs" />
     <Compile Include="MediaUploadNewsTest.cs" />
+    <Compile Include="MediaUploadTest.cs" />
     <Compile Include="MenuCreateTest.cs" />
     <Compile Include="MenuGetTest.cs" />
     <Compile Include="MockPostApiBaseTest.cs" />

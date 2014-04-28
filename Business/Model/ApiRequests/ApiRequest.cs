@@ -19,6 +19,14 @@ namespace WX.Model.ApiRequests
 
         protected abstract bool NeedToken { get; }
 
+        internal virtual bool NotHasResponse
+        {
+            get
+            {
+                return false;
+            }
+        }
+
         internal virtual void Validate()
         {
             if (NeedToken && String.IsNullOrEmpty(AccessToken))

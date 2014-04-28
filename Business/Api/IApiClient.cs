@@ -9,6 +9,6 @@ namespace WX.Api
 {
     public interface IApiClient
     {
-        T Execute<T>(ApiRequest<T> request) where T : ApiResponse;
+        T Execute<T>(ApiRequest<T> request) where T : ApiResponse, new();
     }
 }
