@@ -134,14 +134,15 @@ namespace WX.Framework.Common
             req.Method = "POST";
             req.ContentType = "application/json; charset=utf-8";
             req.ContentLength = postBytes.Length;
+            Stream stream = req.GetRequestStream();
+            stream.Write(postBytes, 0, postBytes.Length);
+            stream.Close();
 
             HttpWebResponse res = (HttpWebResponse)req.GetResponse();
             if (res.StatusCode !=  HttpStatusCode.OK)
                 throw new WebException("code" + res.StatusCode);
             
-            Stream stream = req.GetRequestStream();
-            stream.Write(postBytes, 0, postBytes.Length);
-            stream.Close();
+            
             using (var rstream = res.GetResponseStream())
             using (var reader = new System.IO.StreamReader(rstream, Encoding.UTF8))
             {
