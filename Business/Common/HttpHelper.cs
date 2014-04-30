@@ -129,16 +129,16 @@ namespace WX.Framework.Common
 
             if (req == null)
                 throw new ArgumentException();
-
+            var postdate = content;
+            var postBytes = Encoding.UTF8.GetBytes(postdate);
             req.Method = "POST";
+            req.ContentType = "application/json; charset=utf-8";
+            req.ContentLength = postBytes.Length;
 
             HttpWebResponse res = (HttpWebResponse)req.GetResponse();
             if (res.StatusCode !=  HttpStatusCode.OK)
                 throw new WebException("code" + res.StatusCode);
-            var postdate = content;
-            var postBytes = Encoding.UTF8.GetBytes(postdate);
-            req.ContentType = "application/json; charset=utf-8";
-            req.ContentLength = postBytes.Length;
+            
             Stream stream = req.GetRequestStream();
             stream.Write(postBytes, 0, postBytes.Length);
             stream.Close();
