@@ -20,6 +20,11 @@ namespace WX.Model
             get { return Model.MsgType.Music; }
         }
 
+        public ResponseMusic Music { get; set; }
+    }
+
+    public class ResponseMusic
+    {
         public string Title { get; set; }
 
         public string Description { get; set; }

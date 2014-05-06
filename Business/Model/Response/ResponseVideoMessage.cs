@@ -19,8 +19,15 @@ namespace WX.Model
             get { return Model.MsgType.Video; }
         }
 
+        public ResponseVideo Video { get; set; }
+    }
+
+    public class ResponseVideo
+    {
         public string MediaId { get; set; }
 
-        public string ThumbMediaId { get; set; }
+        public string Title { get; set; }
+
+        public string Description { get; set; }
     }
 }

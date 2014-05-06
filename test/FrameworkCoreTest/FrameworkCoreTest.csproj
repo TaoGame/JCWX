@@ -59,6 +59,7 @@
     <Compile Include="MenuGetTest.cs" />
     <Compile Include="MockPostApiBaseTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResponseMessageTest.cs" />
     <Compile Include="UserGetTest.cs" />
     <Compile Include="UserInfoTest.cs" />
   </ItemGroup>
