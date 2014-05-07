@@ -71,7 +71,7 @@ namespace FrameworkCoreTest
         public void GrousQueryTest()
         {
             //ApiAccessTokenManager.Instance.SetAppIdentity(m_appIdentity);
-            var token = ApiAccessTokenManager.Instance.GetCurrentToken();
+            var token = GetCurrentToken();
             var request = new GroupsQueryRequest()
             {
                 AccessToken = token

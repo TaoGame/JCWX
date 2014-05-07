@@ -36,7 +36,7 @@ namespace FrameworkCoreTest
         {
             var request = new UserGetRequest
             {
-                AccessToken = ApiAccessTokenManager.Instance.GetCurrentToken(),
+                AccessToken = GetCurrentToken(),
                 NextOpenId = "oI1_vjreLbQfGy79Thnsh4ziJZNo"
             };
             var response = m_client.Execute(request);

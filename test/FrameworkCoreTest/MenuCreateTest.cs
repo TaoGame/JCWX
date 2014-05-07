@@ -41,7 +41,7 @@ namespace FrameworkCoreTest
         {
             var request = new MenuCreateRequest
             {
-                AccessToken = ApiAccessTokenManager.Instance.GetCurrentToken(),
+                AccessToken = GetCurrentToken(),
                 Buttons = new List<ClickButton>
                 {
                     new ClickButton{
