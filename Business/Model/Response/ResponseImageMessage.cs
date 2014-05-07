@@ -20,11 +20,6 @@ namespace WX.Model
             get { return Model.MsgType.Image; }
         }
 
-        public ResponageImage Image { get; set; }
-    }
-
-    public class ResponageImage
-    {
-        public string MediaId { get; set; }
+        public ImageMessage Image { get; set; }
     }
 }

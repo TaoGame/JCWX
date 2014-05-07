@@ -41,9 +41,9 @@ namespace FrameworkCoreTest
             return new MediaUploadNewsRequest
             {
                 AccessToken = "123",
-                Articles = new List<Article>()
+                Articles = new List<ArticleMessage>()
                 {
-                    new Article{
+                    new ArticleMessage{
                         ThumbMediaId = "image1",
                         Author = "jamesying",
                         Title = "test news 1",
@@ -51,7 +51,7 @@ namespace FrameworkCoreTest
                         Content = "content1",
                         Description = "discription1"
                     },
-                    new Article{
+                    new ArticleMessage{
                         ThumbMediaId = "image2",
                         Author = "jamesying",
                         Title = "test news 2",

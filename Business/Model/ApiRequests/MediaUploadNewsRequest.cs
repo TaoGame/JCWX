@@ -10,7 +10,7 @@ namespace WX.Model.ApiRequests
     public class MediaUploadNewsRequest : ApiRequest<MediaUploadNewsResponse>
     {
         [JsonProperty("articles")]
-        public IEnumerable<Article> Articles { get; set; }
+        public IEnumerable<ArticleMessage> Articles { get; set; }
 
         internal override string Method
         {

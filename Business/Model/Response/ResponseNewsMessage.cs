@@ -22,6 +22,6 @@ namespace WX.Model
         public int ArticleCount { get; set; }
 
         [XmlArrayItem("item")]
-        public List<Article> Articles { get; set; }
+        public List<ArticleMessage> Articles { get; set; }
     }
 }

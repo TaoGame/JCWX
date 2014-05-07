@@ -30,14 +30,14 @@ namespace WX.Demo.WebClasses
         private static string s_defaultSmallPicUri = "http://wx.jamesying.com/images/default_small.jpg";
 
         //用来缓存请求过来的数据，不高兴用Cache了。
-        private static List<Article> s_articles = null;
+        private static List<ArticleMessage> s_articles = null;
 
         public CnBlogsFeed(int topNum)
         {
             m_topNum = topNum;
         }
 
-        public List<Article> GetTopCnblogsFeed()
+        public List<ArticleMessage> GetTopCnblogsFeed()
         {
             if (s_articles == null)
             {
@@ -61,12 +61,12 @@ namespace WX.Demo.WebClasses
                 var html = GetRemoteUri(s_cnblogsIndexUri, Encoding.UTF8);
                 var matchs = s_cnblogsIndexRegex.Matches(html);
                 var i = 0;
-                s_articles = new List<Article>();
+                s_articles = new List<ArticleMessage>();
                 foreach (Match match in matchs)
                 {
                     if (i >= m_topNum)
                         break;
-                    var article = new Article
+                    var article = new ArticleMessage
                     {
                         Title = match.Groups[2].Value,
                         Url = match.Groups[1].Value,

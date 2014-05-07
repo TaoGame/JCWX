@@ -18,7 +18,7 @@ namespace FrameworkCoreTest
                 FromUserName = "james",
                 ToUserName = "ying",
                 CreateTime = 123123,
-                Image = new ResponageImage
+                Image = new ImageMessage
                 {
                     MediaId = "123"
                 }
@@ -35,7 +35,7 @@ namespace FrameworkCoreTest
                 FromUserName = "jamesying",
                 ToUserName = "ying",
                 CreateTime = 123123,
-                Voice = new ResponseVoice
+                Voice = new VoiceMessage
                 {
                     MediaId = "123123"
                 }
@@ -52,7 +52,7 @@ namespace FrameworkCoreTest
                 FromUserName = "jamesying",
                 ToUserName = "ying",
                 CreateTime = 123123,
-                Video = new ResponseVideo
+                Video = new VideoMessage
                 {
                     MediaId = "123123",
                     Description = "123123",
@@ -71,7 +71,7 @@ namespace FrameworkCoreTest
                 FromUserName = "jamesying",
                 ToUserName = "ying",
                 CreateTime = 123123,
-                Music = new ResponseMusic
+                Music = new MusicMessage
                 {
                     MusicURL = "asdfasdf",
                     HQMusicUrl = "asdfasdf",
