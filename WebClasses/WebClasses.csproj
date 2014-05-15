@@ -57,11 +57,13 @@
     <Compile Include="Handlers\SubScribeEventMessageHandler.cs" />
     <Compile Include="Handlers\TextMessageHandler.cs" />
     <Compile Include="Handlers\UnSubScribeEventMessageHandler.cs" />
+    <Compile Include="Handlers\VoiceMessageHandler.cs" />
     <Compile Include="MyLog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Roles\EventMessageRole.cs" />
     <Compile Include="Roles\MsgTypeMessageRole.cs" />
     <Compile Include="Roles\TextMessageRole.cs" />
+    <Compile Include="Roles\VoiceMessageRole.cs" />
     <Compile Include="Roles\WebMessageRole.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -70,6 +72,7 @@
       <Name>WXFramework</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

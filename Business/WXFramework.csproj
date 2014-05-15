@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiAccessTokenManager.cs" />
+    <Compile Include="Common\DateTimeExtend.cs" />
     <Compile Include="Common\HttpHelper.cs" />
     <Compile Include="IMessageHandler.cs" />
     <Compile Include="IMessageRole.cs" />

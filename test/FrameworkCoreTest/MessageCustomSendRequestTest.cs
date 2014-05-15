@@ -18,6 +18,7 @@ namespace FrameworkCoreTest
         {
             var textRequest = new MessageCustomSendTextRequest
             {
+                AccessToken = "123",
                 ToUser = "james",
                 Text = new TextMessage
                 {
@@ -105,7 +106,7 @@ namespace FrameworkCoreTest
                 ToUser = "oI1_vjirqEuoDttmL-eRcsO-G9to",
                 Text = new TextMessage
                 {
-                    Content = "hello james1"
+                    Content = "hello james1<a href='http://www.cnblogs.com'>123</a>"
                 }
             };
 

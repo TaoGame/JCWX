@@ -12,6 +12,7 @@ namespace WX.Model
         {
             this.MediaId = xml.Element("MediaId").Value;
             this.Format = xml.Element("Format").Value;
+            this.Recognition = xml.Element("Recognition").Value;
         }
 
         public override MsgType MsgType
@@ -22,7 +23,7 @@ namespace WX.Model
         public string MediaId { get; set; }
 
         public string Format { get; set; }
-
-
+        
+        public string Recognition { get; set; }
     }
 }

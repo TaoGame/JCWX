@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Xml.Linq;
+using WX.Demo.WebClasses.Handlers;
+using WX.Demo.WebClasses.Roles;
 using WX.Framework;
 using WX.Model;
 
@@ -18,6 +20,8 @@ namespace WX.Demo.WebClasses
                     return new TextMessageRole().MessageRole(msg);
                 case MsgType.Event:
                     return new EventMessageRole().MessageRole(msg);
+                case MsgType.Voice:
+                    return new VoiceMessageRole().MessageRole(msg);
                 default:
                     return new DefaultMessageHandler();
             }
