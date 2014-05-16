@@ -42,6 +42,7 @@ namespace WX.Model
         public string ThumbMediaId { get; set; }
     }
 
+
     public class VideoMessage
     {
         [JsonProperty("media_id")]

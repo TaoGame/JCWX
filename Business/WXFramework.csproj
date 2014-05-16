@@ -103,6 +103,7 @@
     <Compile Include="Model\ApiResponses\MessageMassSendResponse.cs" />
     <Compile Include="Model\ApiResponses\MessageMassSendAllResponse.cs" />
     <Compile Include="Model\ApiResponses\QrcodeCreateResponse.cs" />
+    <Compile Include="Model\ApiResponses\SnsOAuthAccessTokenResponse.cs" />
     <Compile Include="Model\ApiResponses\UserGetResponse.cs" />
     <Compile Include="Model\ApiResponses\UserInfoResponse.cs" />
     <Compile Include="Model\AppIdentication.cs" />
@@ -134,11 +135,13 @@
     <Compile Include="Model\WXJsonResult.cs" />
     <Compile Include="Model\WXMessage.cs" />
     <Compile Include="NotHandlerMessage.cs" />
+    <Compile Include="OAuth\OAuthHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy /r /y $(TargetPath) $(ProjectDir)..\Bin\</PostBuildEvent>

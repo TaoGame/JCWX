@@ -35,4 +35,10 @@ namespace WX.Model
         Video,
         Thumb
     }
+
+    public enum OAuthScope
+    {
+        Base,
+        UserInfo
+    }
 }

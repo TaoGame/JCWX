@@ -57,10 +57,18 @@
   <ItemGroup>
     <Content Include="Images\default_small.jpg" />
     <Content Include="Images\default_Title.jpg" />
+    <Content Include="Oauth2Demo.aspx" />
     <Content Include="Web.config" />
     <Content Include="WX.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Oauth2Demo.aspx.cs">
+      <DependentUpon>Oauth2Demo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Oauth2Demo.aspx.designer.cs">
+      <DependentUpon>Oauth2Demo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WX.aspx.cs">
       <DependentUpon>WX.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

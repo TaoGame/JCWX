@@ -64,7 +64,7 @@ namespace WX.Framework
                 throw new WXApiException(-100, "请先设置好AppID与AppSecret");
             }
 
-            Console.WriteLine("refesh token");
+            //Console.WriteLine("refesh token");
             var now = DateTime.Now;
             var request = new AccessTokenRequest(m_appIdentity);
             var response = Client.Execute(request);
