@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using WX.Model;
 
-namespace WX.Framework.OAuth
+namespace WX.OAuth
 {
     public class OAuthHelper
     {

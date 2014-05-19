@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
-using WX.Framework.Common;
+using WX.Common;
 using WX.Model.ApiRequests;
 using WX.Model.ApiResponses;
 
@@ -24,7 +24,7 @@ namespace WX.Api
             {
                 result = JsonConvert.DeserializeObject<T>(execResult);
             }
-            catch
+            catch(Exception ex)
             {
                 result = null;
             }
@@ -47,11 +47,11 @@ namespace WX.Api
         public virtual string DoExecute<T>(ApiRequest<T> request)
             where T : ApiResponse
         {
-            HttpWebRequest req = HttpWebRequest.Create(request.GetUrl())
-                     as HttpWebRequest;
+            //HttpWebRequest req = HttpWebRequest.Create(request.GetUrl())
+            //         as HttpWebRequest;
 
-            if (req == null)
-                throw new ArgumentException();
+            //if (req == null)
+            //    throw new ArgumentException();
 
             var result = String.Empty;
             switch (request.Method)

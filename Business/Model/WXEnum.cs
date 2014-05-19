@@ -41,4 +41,11 @@ namespace WX.Model
         Base,
         UserInfo
     }
+
+    public enum Language
+    {
+        CN,
+        TW,
+        EN
+    }
 }

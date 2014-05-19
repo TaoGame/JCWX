@@ -6,7 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using WX.Framework.Common;
+using WX.Common;
 using WX.Model;
 using WX.Model.ApiRequests;
 using WX.Model.ApiResponses;

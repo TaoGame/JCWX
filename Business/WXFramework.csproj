@@ -7,7 +7,7 @@
     <ProjectGuid>{5765CFA5-1892-4A06-81A8-F5E4C8A28DFF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WX.Framework</RootNamespace>
+    <RootNamespace>WX</RootNamespace>
     <AssemblyName>JCSoft.WX.Framework</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -81,6 +81,9 @@
     <Compile Include="Model\ApiRequests\MessageMassSendAllRequest.cs" />
     <Compile Include="Model\ApiRequests\MessageMassSendRequest.cs" />
     <Compile Include="Model\ApiRequests\QrcodeCreateRequest.cs" />
+    <Compile Include="Model\ApiRequests\SnsOAuthAccessTokenRequest.cs" />
+    <Compile Include="Model\ApiRequests\SnsOauthRefreshTokenRequest.cs" />
+    <Compile Include="Model\ApiRequests\SnsUserInfoRequest.cs" />
     <Compile Include="Model\ApiRequests\UserGetRequest.cs" />
     <Compile Include="Model\ApiRequests\UserInfoRequest.cs" />
     <Compile Include="Model\ApiResponses\AccessTokenResponse.cs" />
@@ -104,6 +107,7 @@
     <Compile Include="Model\ApiResponses\MessageMassSendAllResponse.cs" />
     <Compile Include="Model\ApiResponses\QrcodeCreateResponse.cs" />
     <Compile Include="Model\ApiResponses\SnsOAuthAccessTokenResponse.cs" />
+    <Compile Include="Model\ApiResponses\SnsUserInfoResponse.cs" />
     <Compile Include="Model\ApiResponses\UserGetResponse.cs" />
     <Compile Include="Model\ApiResponses\UserInfoResponse.cs" />
     <Compile Include="Model\AppIdentication.cs" />

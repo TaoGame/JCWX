@@ -6,7 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 
-namespace WX.Framework.Common
+namespace WX.Common
 {
     public static class HttpHelper
     {
