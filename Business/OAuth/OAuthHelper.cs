@@ -20,7 +20,7 @@ namespace WX.OAuth
         public string BuildOAuthUrl(string redirectUrl, OAuthScope scope, string state)
         {
             return String.Format(s_weixin_oauth_format_url,
-                AppID, redirectUrl, scope, state);
+                AppID, redirectUrl, scope.ToString().ToLower(), state);
         }
     }
 }

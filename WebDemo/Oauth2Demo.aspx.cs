@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WX.Model;
 using WX.Model.ApiResponses;
+using WX.OAuth;
 
 namespace WebDemo
 {
@@ -12,15 +15,28 @@ namespace WebDemo
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            WeiXinUser = new UserInfoResponse
-            {
-                Nickname = "jaemsying"
-            };
-            Code = Request["Code"];
+            
         }
 
-        public UserInfoResponse WeiXinUser { get; set; }
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            if (DropDownList1.SelectedValue != "0")
+            {
+                Image1.ImageUrl = "~/Qrcodepage.aspx?api=" + DropDownList1.SelectedValue;
+                Image1.Visible = true;
+                var manager = new OAuthHelper(ConfigurationManager.AppSettings["wxappid"]);
+                var url = manager.BuildOAuthUrl("http://wx.taogame.com/OAuthUserInfoDemo.aspx",
+                    DropDownList1.SelectedValue == "snsapi_base" ? OAuthScope.Base : OAuthScope.UserInfo,
+                    DropDownList1.SelectedValue);
+                Label1.Text = url;
+            }
+            else
+            {
+                Image1.Visible = false;
+                Label1.Visible = true;
+            }
+        }
 
-        public string Code { get; set; }
+       
     }
 }

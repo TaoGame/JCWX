@@ -39,6 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Gma.QrCodeNet.Encoding">
+      <HintPath>..\packages\QrCode.Net.0.4.0.0\lib\net35\Gma.QrCodeNet.Encoding.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -58,6 +61,8 @@
     <Content Include="Images\default_small.jpg" />
     <Content Include="Images\default_Title.jpg" />
     <Content Include="Oauth2Demo.aspx" />
+    <Content Include="OAuthUserInfoDemo.aspx" />
+    <Content Include="QrcodePage.aspx" />
     <Content Include="Web.config" />
     <Content Include="WX.aspx" />
   </ItemGroup>
@@ -68,6 +73,20 @@
     </Compile>
     <Compile Include="Oauth2Demo.aspx.designer.cs">
       <DependentUpon>Oauth2Demo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OAuthUserInfoDemo.aspx.cs">
+      <DependentUpon>OAuthUserInfoDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OAuthUserInfoDemo.aspx.designer.cs">
+      <DependentUpon>OAuthUserInfoDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QrcodePage.aspx.cs">
+      <DependentUpon>QrcodePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QrcodePage.aspx.designer.cs">
+      <DependentUpon>QrcodePage.aspx</DependentUpon>
     </Compile>
     <Compile Include="WX.aspx.cs">
       <DependentUpon>WX.aspx</DependentUpon>
@@ -90,6 +109,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
