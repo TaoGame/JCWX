@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 using WX.Api;
 using WX.Model;
 using WX.Model.ApiRequests;
+using WX.Model.ApiResponses;
 
 namespace WebDemo
 {
@@ -72,13 +73,13 @@ namespace WebDemo
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-            var request = new SnsUserInfoRequest
+            SnsUserInfoRequest request = new SnsUserInfoRequest
             {
                 OAuthToken = Label2.Text,
                 Lang = Language.CN,
                 OpenId = Label5.Text
             };
-            var response = m_client.Execute(request);
+            SnsUserInfoResponse response = m_client.Execute(request);
             if (response.IsError)
             {
                 Label6.Text = response.ToString();
