@@ -8,7 +8,7 @@
 如果在使用中有任何问题，可以Email给我：james#taogame.com
 
 如果您觉得好，也可以通过以下二维码捐助我：
-![juanzhu](https://mobilecodec.alipay.com/show.htm?code=apkk7iarj6b5z7ik7f&picSize=L "juanzhu")
+![image](https://mobilecodec.alipay.com/show.htm?code=apkk7iarj6b5z7ik7f&picSize=L)
 
 ---------------------------------------------------------------------------
 
