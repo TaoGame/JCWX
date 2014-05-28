@@ -7,7 +7,6 @@
 
 如果在使用中有任何问题，可以Email给我：james#taogame.com
 
-如果您觉得好，也可以通过以下[捐助](http://me.alipay.com/jamesying)我
 
 ---------------------------------------------------------------------------
 
@@ -18,3 +17,9 @@
 四、[体验微信公众平台快速开发框架](http://www.cnblogs.com/inday/p/wx-publicform-quick-framework-webdemo.html)<br />
 五、[利用快速开发框架，快速搭建微信浏览博客园首页文章](http://www.cnblogs.com/inday/p/weixin-publicf-platform-cnblogs.html)<br />
 六、[微信快速开发框架（WXPP QuickFramework）V2.0版本上线--源码已更新至github](http://www.cnblogs.com/inday/p/wxpp-quick-framework-v-2.html)<br />
+七、[微信快速开发框架（七）--发送客服信息，版本更新至V2.2](http://www.cnblogs.com/inday/p/weixin-public-platform-quick-framework-v-2-2.html)<br />
+八、[微信快速开发框架V2.3--增加语音识别及网页获取用户信息](http://www.cnblogs.com/inday/p/wechat-public-platform-v2-3.html)
+
+----------------------------------------------------------------------------
+如果您觉得好，也可以通过以下二维码捐助我：
+![image](https://mobilecodec.alipay.com/show.htm?code=apkk7iarj6b5z7ik7f&picSize=L)

@@ -56,7 +56,7 @@ namespace WX.Model
                     return new RequestQREventMessage(element);
                 case Event.Subscribe:
                     return GetSubscribeRequestMessageForQR(element);
-                case Event.VIEW:
+                case Event.View:
                     return new RequestViewEventMessage(element);
             }
 

@@ -26,7 +26,7 @@ namespace WX.Model
         Location,
         Click,
         MASSSENDJOBFINISH,
-        VIEW
+        View
     }
 
     public enum MediaType
