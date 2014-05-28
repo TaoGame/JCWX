@@ -127,6 +127,7 @@
     <Compile Include="Model\Request\RequestQREventMessage.cs" />
     <Compile Include="Model\Request\RequestTextMessage.cs" />
     <Compile Include="Model\Request\RequestVideoMessage.cs" />
+    <Compile Include="Model\Request\RequestViewEventMessage.cs" />
     <Compile Include="Model\Request\RequestVoiceMessage.cs" />
     <Compile Include="Model\Response\ResponseImageMessage.cs" />
     <Compile Include="Model\Response\ResponseMessage.cs" />

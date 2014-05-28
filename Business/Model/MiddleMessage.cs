@@ -56,6 +56,8 @@ namespace WX.Model
                     return new RequestQREventMessage(element);
                 case Event.Subscribe:
                     return GetSubscribeRequestMessageForQR(element);
+                case Event.VIEW:
+                    return new RequestViewEventMessage(element);
             }
 
             throw new ArgumentException("event type is error");
