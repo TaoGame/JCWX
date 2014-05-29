@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameworkCoreTest", "test\F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WXFramework", "Business\WXFramework.csproj", "{5765CFA5-1892-4A06-81A8-F5E4C8A28DFF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomClickMenu", "CustomClickMenu\CustomClickMenu.csproj", "{EE5E6F8A-4E99-45B9-8619-C6B98663E33A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,14 +46,21 @@ Global
 		{5765CFA5-1892-4A06-81A8-F5E4C8A28DFF}.librelease|Any CPU.Build.0 = librelease|Any CPU
 		{5765CFA5-1892-4A06-81A8-F5E4C8A28DFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5765CFA5-1892-4A06-81A8-F5E4C8A28DFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE5E6F8A-4E99-45B9-8619-C6B98663E33A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE5E6F8A-4E99-45B9-8619-C6B98663E33A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE5E6F8A-4E99-45B9-8619-C6B98663E33A}.librelease|Any CPU.ActiveCfg = Release|Any CPU
+		{EE5E6F8A-4E99-45B9-8619-C6B98663E33A}.librelease|Any CPU.Build.0 = Release|Any CPU
+		{EE5E6F8A-4E99-45B9-8619-C6B98663E33A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE5E6F8A-4E99-45B9-8619-C6B98663E33A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{5765CFA5-1892-4A06-81A8-F5E4C8A28DFF} = {B1E93B15-EB4F-493D-B309-E2F53016F0D1}
 		{72472759-0504-49E8-A289-F12E71A93181} = {8AB866F7-4EAA-44EF-AD67-7CB4CF12FA72}
 		{7167FFE5-2C16-4466-AAED-2B4107974BAE} = {8AB866F7-4EAA-44EF-AD67-7CB4CF12FA72}
+		{EE5E6F8A-4E99-45B9-8619-C6B98663E33A} = {8AB866F7-4EAA-44EF-AD67-7CB4CF12FA72}
+		{5765CFA5-1892-4A06-81A8-F5E4C8A28DFF} = {B1E93B15-EB4F-493D-B309-E2F53016F0D1}
 		{2DE1B569-2437-47E0-AA51-84CDCCB2968A} = {845B1649-482C-4C6E-97B7-0F6C320DCCEC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
