@@ -59,6 +59,7 @@
     <Compile Include="IMessageRole.cs" />
     <Compile Include="Model\ApiRequests\AccessTokenRequest.cs" />
     <Compile Include="Model\ApiRequests\ApiRequest.cs" />
+    <Compile Include="Model\ApiRequests\CustomServiceGetRecordRequest.cs" />
     <Compile Include="Model\ApiRequests\GroupsCreateRequest.cs" />
     <Compile Include="Model\ApiRequests\GroupsGetIdRequest.cs" />
     <Compile Include="Model\ApiRequests\GroupsMembersUpdateRequest.cs" />
@@ -90,6 +91,7 @@
     <Compile Include="Model\ApiResponses\ApiResponse.cs" />
     <Compile Include="Api\DefaultApiClient.cs" />
     <Compile Include="Api\IApiClient.cs" />
+    <Compile Include="Model\ApiResponses\CustomServiceGetRecordResponse.cs" />
     <Compile Include="Model\ApiResponses\GroupCreateResponse.cs" />
     <Compile Include="Model\ApiResponses\GroupsGetIdResponse.cs" />
     <Compile Include="Model\ApiResponses\GroupsMembersUpdateResponse.cs" />

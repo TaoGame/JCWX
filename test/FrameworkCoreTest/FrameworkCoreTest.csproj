@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="AccessTokenTest.cs" />
     <Compile Include="BaseTest.cs" />
+    <Compile Include="CustomeServiceGetRecordTest.cs" />
     <Compile Include="GroupCreateTest.cs" />
     <Compile Include="GroupsGetIdTest.cs" />
     <Compile Include="GroupsMembersUpdateTest.cs" />

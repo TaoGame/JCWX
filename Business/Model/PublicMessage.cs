@@ -174,4 +174,17 @@ namespace WX.Model
             }
         }
     }
+
+    public class CustomServiceRecord
+    {
+        public string Worker { get; set; }
+
+        public string OpenId { get; set; }
+
+        public int Opercode { get; set; }
+
+        public long Time { get; set; }
+
+        public string Text { get; set; }
+    }
 }
