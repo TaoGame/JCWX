@@ -12,6 +12,8 @@
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -71,6 +73,10 @@
     <Compile Include="Model\ApiRequests\MenuCreateRequest.cs" />
     <Compile Include="Model\ApiRequests\MenuDeleteRequest.cs" />
     <Compile Include="Model\ApiRequests\MenuGetRequest.cs" />
+    <Compile Include="Model\ApiRequests\MerchantCreateRequest.cs" />
+    <Compile Include="Model\ApiRequests\MerchantDelRequest.cs" />
+    <Compile Include="Model\ApiRequests\MerchantGetRequest.cs" />
+    <Compile Include="Model\ApiRequests\MerchantUpdateRequest.cs" />
     <Compile Include="Model\ApiRequests\MessageCustomSendImageRequest.cs" />
     <Compile Include="Model\ApiRequests\MessageCustomSendMusicRequest.cs" />
     <Compile Include="Model\ApiRequests\MessageCustomSendNewsRequest.cs" />
@@ -92,6 +98,7 @@
     <Compile Include="Api\DefaultApiClient.cs" />
     <Compile Include="Api\IApiClient.cs" />
     <Compile Include="Model\ApiResponses\CustomServiceGetRecordResponse.cs" />
+    <Compile Include="Model\ApiResponses\DefaultResponse.cs" />
     <Compile Include="Model\ApiResponses\GroupCreateResponse.cs" />
     <Compile Include="Model\ApiResponses\GroupsGetIdResponse.cs" />
     <Compile Include="Model\ApiResponses\GroupsMembersUpdateResponse.cs" />
@@ -103,6 +110,8 @@
     <Compile Include="Model\ApiResponses\MenuCreateResponse.cs" />
     <Compile Include="Model\ApiResponses\MenuDeleteResponse.cs" />
     <Compile Include="Model\ApiResponses\MenuGetResponse.cs" />
+    <Compile Include="Model\ApiResponses\MerchantCreateResponse.cs" />
+    <Compile Include="Model\ApiResponses\MerchantGetResponse.cs" />
     <Compile Include="Model\ApiResponses\MessageCustomSendResponse.cs" />
     <Compile Include="Model\ApiResponses\MessageMassDeleteResponse.cs" />
     <Compile Include="Model\ApiResponses\MessageMassSendResponse.cs" />
@@ -116,6 +125,7 @@
     <Compile Include="Model\ClickButton.cs" />
     <Compile Include="Model\Exceptions\WXApiException.cs" />
     <Compile Include="Model\Group.cs" />
+    <Compile Include="Model\MerchantInfoModel.cs" />
     <Compile Include="Model\PublicMessage.cs" />
     <Compile Include="Model\MiddleMessage.cs" />
     <Compile Include="Model\Request\RequestClickEventMessage.cs" />
@@ -153,6 +163,7 @@
   <PropertyGroup>
     <PostBuildEvent>xcopy /r /y $(TargetPath) $(ProjectDir)..\Bin\</PostBuildEvent>
   </PropertyGroup>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
