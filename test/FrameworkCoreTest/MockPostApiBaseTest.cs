@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WX.Model.ApiRequests;
 using WX.Model.ApiResponses;
+using Xunit;
 
 namespace FrameworkCoreTest
 {
@@ -13,6 +15,7 @@ namespace FrameworkCoreTest
         where TResponse : ApiResponse
     {
         protected static string s_errmsg = "{\"errcode\":40007,\"errmsg\":\"invalid media_id\"}";
+        protected static string s_successmsg = "{\"errcode\":0,\"errmsg\":\"success\"}";
         private TRequest m_request = null;
         public TRequest Request
         {
@@ -44,5 +47,17 @@ namespace FrameworkCoreTest
                 return "123";
             return base.GetCurrentToken();
         }
+
+        [Fact]
+        public virtual void MockGetPostContent()
+        {
+            Console.WriteLine(Request.GetPostContent());
+        }
+
+        protected string JsonSerialize(object obj)
+        {
+            return JsonConvert.SerializeObject(obj);
+        }
+
     }
 }

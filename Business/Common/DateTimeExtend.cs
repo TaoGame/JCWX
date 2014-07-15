@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace WX.Common
+namespace WX
 {
     public static class DateTimeExtend
     {
@@ -11,7 +11,7 @@ namespace WX.Common
 
         public static long ConvertToTimeStamp(this DateTime time)
         {
-            return (DateTime.Now.ToUniversalTime().Ticks - STANDARD_TIME_STAMP) / 10000000;
+            return (time.ToUniversalTime().Ticks - STANDARD_TIME_STAMP) / 10000000;
         }
 
         public static DateTime ConvertToDateTime(this long timestamp)

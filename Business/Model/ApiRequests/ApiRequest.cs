@@ -11,6 +11,10 @@ namespace WX.Model.ApiRequests
     public abstract class ApiRequest<T>
         where T : ApiResponse
     {
+        protected const string POSTMETHOD = "POST";
+        protected const string GETMETHOD = "GET";
+        protected const string FILEMETHOD = "FILE";
+
         internal abstract string Method { get; }
 
         protected abstract string UrlFormat { get; }

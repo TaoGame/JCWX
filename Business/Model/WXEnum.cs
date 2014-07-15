@@ -15,7 +15,8 @@ namespace WX.Model
         Link,
         Event,
         News,
-        Music
+        Music,
+        transfer_customer_service
     }
 
     public enum Event
@@ -26,7 +27,8 @@ namespace WX.Model
         Location,
         Click,
         MASSSENDJOBFINISH,
-        View
+        View,
+        Merchant_Order
     }
 
     public enum MediaType

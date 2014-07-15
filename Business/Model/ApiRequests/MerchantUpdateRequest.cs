@@ -9,11 +9,7 @@ namespace WX.Model.ApiRequests
 {
     public class MerchantUpdateRequest : ApiRequest<DefaultResponse>
     {
-        [JsonProperty("product_id")]
-        public string ProductID { get; set; }
-
-        [JsonProperty("product_base")]
-        public Product ProductBase { get; set; }
+        public ProductInfo ProductInfo { get; set; }
 
         internal override string Method
         {
@@ -37,7 +33,7 @@ namespace WX.Model.ApiRequests
 
         public override string GetPostContent()
         {
-            return JsonConvert.SerializeObject(this);
+            return JsonConvert.SerializeObject(this.ProductInfo);
         }
     }
 }

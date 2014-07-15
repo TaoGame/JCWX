@@ -35,6 +35,10 @@
     <Reference Include="Moq">
       <HintPath>..\..\packages\Moq.4.2.1402.2112\lib\net40\Moq.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -60,6 +64,38 @@
     <Compile Include="MediaUploadTest.cs" />
     <Compile Include="MenuCreateTest.cs" />
     <Compile Include="MenuGetTest.cs" />
+    <Compile Include="Merchant\CreateTest.cs" />
+    <Compile Include="Merchant\MerchantCategoryGetskuTest.cs" />
+    <Compile Include="Merchant\MerchantCategoryGetsubTest.cs" />
+    <Compile Include="Merchant\MerchantCommonUploadimgTest.cs" />
+    <Compile Include="Merchant\MerchantDelTest.cs" />
+    <Compile Include="Merchant\MerchantExpressAddTest.cs" />
+    <Compile Include="Merchant\MerchantExpressDelTest.cs" />
+    <Compile Include="Merchant\MerchantExpressGetallTest.cs" />
+    <Compile Include="Merchant\MerchantExpressGetbyidTest.cs" />
+    <Compile Include="Merchant\MerchantExpressUpdateTest.cs" />
+    <Compile Include="Merchant\MerchantGetbystatus.cs" />
+    <Compile Include="Merchant\MerchantGetpropertyTest.cs" />
+    <Compile Include="Merchant\MerchantGetTest.cs" />
+    <Compile Include="Merchant\MerchantGroupAddTest.cs" />
+    <Compile Include="Merchant\MerchantGroupDelTest.cs" />
+    <Compile Include="Merchant\MerchantGroupGetallTest.cs" />
+    <Compile Include="Merchant\MerchantGroupGetbyidTest.cs" />
+    <Compile Include="Merchant\MerchantGroupProductmodTest.cs" />
+    <Compile Include="Merchant\MerchantGroupPropertymodTest.cs" />
+    <Compile Include="Merchant\MerchantModproductstatusTest.cs" />
+    <Compile Include="Merchant\MerchantOrderCloseTest.cs" />
+    <Compile Include="Merchant\MerchantOrderGetbyfilterTest.cs" />
+    <Compile Include="Merchant\MerchantOrderGetbyidTest.cs" />
+    <Compile Include="Merchant\MerchantOrderSetdeliveryTest.cs" />
+    <Compile Include="Merchant\MerchantShelfAddTest.cs" />
+    <Compile Include="Merchant\MerchantShelfDelTest.cs" />
+    <Compile Include="Merchant\MerchantShelfGetallTest.cs" />
+    <Compile Include="Merchant\MerchantShelfGetbyidTest.cs" />
+    <Compile Include="Merchant\MerchantShelfUpdatestatusTest.cs" />
+    <Compile Include="Merchant\MerchantStockAddTest.cs" />
+    <Compile Include="Merchant\MerchantStockReductTest.cs" />
+    <Compile Include="Merchant\MerchantUpdateTest.cs" />
     <Compile Include="MessageCustomSendRequestTest.cs" />
     <Compile Include="MockPostApiBaseTest.cs" />
     <Compile Include="OAuthAccessTokenTest.cs" />

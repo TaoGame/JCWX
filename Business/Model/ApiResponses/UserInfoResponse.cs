@@ -26,5 +26,7 @@ namespace WX.Model.ApiResponses
         public string Headimgurl { get; set; }
 
         public int Subscribe_time { get; set; }
+
+        public string UnionID { get; set; }
     }
 }

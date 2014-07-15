@@ -19,6 +19,7 @@ namespace FrameworkCoreTest
             Assert.Equal(false, response.IsError);
             Assert.Equal("o6_bmjrPTlm6_2sgVt7hMZOPfL2M", response.OpenId);
             Assert.Equal("广州", response.City);
+            Assert.Equal("o6_bmasdasdsad6_2sgVt7hMZOPfL", response.UnionID);
         }
 
         [Fact]
@@ -54,7 +55,8 @@ namespace FrameworkCoreTest
                     ""province"": ""广东"", 
                     ""country"": ""中国"", 
                     ""headimgurl"":    ""http://wx.qlogo.cn/mmopen/g3MonUZtNHkdmzicIlibx6iaFqAc56vxLSUfpb6n5WKSYVY0ChQKkiaJSgQ1dZuTOgvLLrhJbERQQ4eMsv84eavHiaiceqxibJxCfHe/0"", 
-                   ""subscribe_time"": 1382694957
+                    ""subscribe_time"": 1382694957,
+                    ""unionid"": ""o6_bmasdasdsad6_2sgVt7hMZOPfL""
                 }";
         }
     }

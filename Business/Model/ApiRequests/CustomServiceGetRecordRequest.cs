@@ -10,10 +10,28 @@ namespace WX.Model.ApiRequests
     public class CustomServiceGetRecordRequest : ApiRequest<CustomServiceGetRecordResponse>
     {
         [JsonProperty("starttime")]
-        public long StartTime { get; set; }
+        internal long StartTimeStamp
+        {
+            get
+            {
+                return StartTime.ConvertToTimeStamp();
+            }
+        }
+
+        [JsonIgnore]
+        public DateTime StartTime { get; set; }
 
         [JsonProperty("endtime")]
-        public long EndTime { get; set; }
+        internal long EndTimeStamp
+        {
+            get
+            {
+                return EndTime.ConvertToTimeStamp();
+            }
+        }
+
+        [JsonIgnore]
+        public DateTime EndTime { get; set; }
 
         [JsonProperty("openid")]
         public string OpenId { get; set; }

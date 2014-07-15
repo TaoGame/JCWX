@@ -37,8 +37,8 @@ namespace FrameworkCoreTest
         {
             return new CustomServiceGetRecordRequest
             {
-                StartTime = 123456789,
-                EndTime = 987654321,
+                StartTime = new DateTime(2014,1,1),
+                EndTime = new DateTime(2014,3,1),
                 AccessToken = "123",
                 OpenId = "123",
                 PageIndex = 1,

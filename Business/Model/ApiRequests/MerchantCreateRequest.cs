@@ -9,6 +9,8 @@ namespace WX.Model.ApiRequests
 {
     public class MerchantCreateRequest : ApiRequest<MerchantCreateResponse>
     {
+        public ProductInfo ProductInfo { get; set; }
+
         internal override string Method
         {
             get { return "POST"; }
@@ -31,7 +33,7 @@ namespace WX.Model.ApiRequests
 
         public override string GetPostContent()
         {
-            return JsonConvert.SerializeObject(this);
+            return JsonConvert.SerializeObject(this.ProductInfo);
         }
     }
 }

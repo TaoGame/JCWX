@@ -1,0 +1,715 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gma.QrCodeNet.Encoding</name>
+    </assembly>
+    <members>
+        <member name="T:Gma.QrCodeNet.Encoding.DataEncodation.AlphanumericEncoder">
+            <summary>
+            ISO/IEC 18004:2000 Chapter 8.4.3 Alphanumeric Page 21
+            </summary>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.DataEncodation.EncoderBase.GetDataBits(System.String)">
+            <summary>
+            Returns the bit representation of input data.
+            </summary>
+            <param name="content"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.DataEncodation.EncoderBase.GetModeIndicator">
+            <summary>
+            Returns bit representation of <see cref="P:Gma.QrCodeNet.Encoding.DataEncodation.EncoderBase.Mode"/> value.
+            </summary>
+            <returns></returns>
+            <remarks>See Chapter 8.4 Data encodation, Table 2 — Mode indicators</remarks>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.DataEncodation.EncoderBase.GetCharCountIndicator(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="characterCount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.DataEncodation.EncoderBase.GetBitCountInCharCountIndicator(System.Int32)">
+            <summary>
+            Defines the length of the Character Count Indicator, 
+            which varies according to themode and the symbol version in use
+            </summary>
+            <returns>Number of bits in Character Count Indicator.</returns>
+            <remarks>
+            See Chapter 8.4 Data encodation, Table 3 — Number of bits in Character Count Indicator.
+            </remarks>
+        </member>
+        <member name="F:Gma.QrCodeNet.Encoding.DataEncodation.AlphanumericEncoder.s_MultiplyFirstChar">
+            <summary>
+            Constant from Chapter 8.4.3 Alphanumeric Mode. P.21
+            </summary>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.DataEncodation.AlphanumericEncoder.GetBitCountByGroupLength(System.Int32)">
+            <summary>
+            BitCount from chapter 8.4.3. P22
+            </summary>
+        </member>
+        <member name="T:Gma.QrCodeNet.Encoding.DataEncodation.AlphanumericTable">
+            <summary>
+            Table at chapter 8.4.3. P.21
+            </summary>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.DataEncodation.AlphanumericTable.ConvertAlphaNumChar(System.Char)">
+            <summary>
+            Convert char to int value
+            </summary>
+            <param name="inputChar">Alpha Numeric Char</param>
+            <remarks>Table from chapter 8.4.3 P21</remarks>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.DataEncodation.CharCountIndicatorTable.GetCharCountIndicatorSet(Gma.QrCodeNet.Encoding.DataEncodation.Mode)">
+            <remarks>ISO/IEC 18004:2000 Table 3 Page 18</remarks>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.DataEncodation.CharCountIndicatorTable.GetVersionGroup(System.Int32)">
+            <summary>
+            Used to define length of the Character Count Indicator <see cref="M:Gma.QrCodeNet.Encoding.DataEncodation.CharCountIndicatorTable.GetBitCountInCharCountIndicator(Gma.QrCodeNet.Encoding.DataEncodation.Mode,System.Int32)"/>
+            </summary>
+            <returns>Returns the 0 based index of the row from Chapter 8.4 Data encodation, Table 3 — Number of bits in Character Count Indicator. </returns>
+        </member>
+        <member name="T:Gma.QrCodeNet.Encoding.DataEncodation.DataEncode">
+            <remarks>ISO/IEC 18004:2000 Chapter 8.1 Page 14
+            DataEncode is combination of Data analysis and Data encodation step.
+            Which uses sub functions under several different namespaces</remarks>
+        </member>
+        <member name="F:Gma.QrCodeNet.Encoding.DataEncodation.ECISet.ECIMode">
+            <summary>
+            ISO/IEC 18004:2006 Chapter 6.4.2 Mode indicator = 0111 Page 23
+            </summary>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.DataEncodation.ECISet.#ctor(Gma.QrCodeNet.Encoding.DataEncodation.ECISet.AppendOption)">
+            <summary>
+            Initialize ECI Set. 
+            </summary>
+            <param name="option">AppendOption is enum under ECISet
+            Use NameToValue during Encode. ValueToName during Decode</param>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.DataEncodation.ECISet.NumOfCodewords(System.Int32)">
+            <remarks>ISO/IEC 18004:2006E ECI Designator Page 24</remarks>
+            <param name="ECIValue">Range: 0 ~ 999999</param>
+            <returns>Number of Codewords(Byte) for ECI Assignment Value</returns>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.DataEncodation.ECISet.NumOfAssignmentBits(System.Int32)">
+            <remarks>ISO/IEC 18004:2006E ECI Designator Page 24</remarks>
+            <param name="ECIValue">Range: 0 ~ 999999</param>
+            <returns>Number of bits for ECI Assignment Value</returns>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.DataEncodation.ECISet.NumOfECIHeaderBits(System.Int32)">
+            <remarks>ISO/IEC 18004:2006E ECI Designator Page 24</remarks>
+            <param name="ECIValue">Range: 0 ~ 999999</param>
+            <returns>Number of bits for ECI Header</returns>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.DataEncodation.ECISet.GetECITable">
+            <returns>ECI table in Dictionary collection</returns>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.DataEncodation.ECISet.GetECIHeader(System.String)">
+            <remarks>ISO/IEC 18004:2006 Chapter 6.4.2 Page 24.</remarks>
+        </member>
+        <member name="T:Gma.QrCodeNet.Encoding.DataEncodation.ECISet.ECICodewordsLength">
+            <summary>
+            Length indicator for number of ECI codewords
+            </summary>
+            <remarks>ISO/IEC 18004:2006 Chapter 6.4.2 Page 24.
+            1 codeword length = 0. Any additional codeword add 1 to front. Eg: 3 = 110</remarks>
+            <description>Bits required for each one is:
+            one = 1, two = 2, three = 3</description>
+        </member>
+        <member name="T:Gma.QrCodeNet.Encoding.DataEncodation.EightBitByteEncoder">
+            <summary>
+            EightBitByte is a bit complicate compare to other encoding.
+            It can accept several different encoding table from global ECI table.
+            For different country, default encoding is different. JP use shift_jis, International spec use iso-8859-1
+            China use ASCII which is first part of normal char table. Between 00 to 7E
+            Korean and Thai should have their own default encoding as well. But so far I can not find their specification freely online.
+            QrCode.Net will use international standard which is iso-8859-1 as default encoding. 
+            And use UTF8 as suboption for any string that not belong to any char table or other encoder. 
+            </summary>
+            <remarks>ISO/IEC 18004:2000 Chapter 8.4.4 Page 22</remarks>
+        </member>
+        <member name="F:Gma.QrCodeNet.Encoding.DataEncodation.EightBitByteEncoder.EIGHT_BIT_BYTE_BITCOUNT">
+            <summary>
+            Bitcount, Chapter 8.4.4, P.24
+            </summary>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.DataEncodation.EightBitByteEncoder.#ctor(System.String)">
+            <summary>
+            EightBitByte encoder's encoding will change according to different region
+            </summary>
+            <param name="encoding">Default encoding is "iso-8859-1"</param>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.DataEncodation.InputRecognition.InputRecognise.Recognise(System.String)">
+            <summary>
+            Use to recognise which mode and encoding name to use for input string. 
+            </summary>
+            <param name="content">input string content</param>
+            <param name="encodingName">Output encoding name</param>
+            <returns>Mode and Encoding name</returns>
+        </member>
+        <member name="F:Gma.QrCodeNet.Encoding.DataEncodation.InputRecognition.ModeEncodeCheck.QUESTION_MARK_CHAR">
+            <summary>
+            Encoding.GetEncoding.GetBytes will transform char to 0x3F if that char not belong to current encoding table. 
+            0x3F is '?'
+            </summary>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.DataEncodation.InputRecognition.ModeEncodeCheck.TryEncodeAlphaNum(System.String,System.Int32,System.Int32)">
+            <summary>
+            Check char from startPos for string content. 
+            </summary>
+            <param name="content">input string content</param>
+            <param name="startPos">start check position</param>
+            <returns>-2 Numeric encode, -1 AlphaNum encode, Index of failed check pos</returns>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.DataEncodation.InputRecognition.ModeEncodeCheck.TryEncodeEightBitByte(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Use given encoding to check input string from starting position. If encoding table is suitable solution.
+            it will return -1. Else it will return failed encoding position. 
+            </summary>
+            <param name="content">input string</param>
+            <param name="encodingName">encoding name. Check ECI table</param>
+            <param name="startPos">starting position</param>
+            <returns>-1 if from starting position to end encoding success. Else return fail position</returns>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.DataEncodation.InputRecognition.ModeEncodeCheck.TryEncodeKanji(System.String,System.Int32)">
+            <summary>
+            Check input string content. Whether it can apply Kanji encode or not. 
+            </summary>
+            <param name="content">String input content</param>
+            <returns>-1 if it can apply Kanji encode, -2 should use utf8 encode, 0 check for other encode.</returns>
+        </member>
+        <member name="T:Gma.QrCodeNet.Encoding.DataEncodation.KanjiEncoder">
+            <remarks>ISO/IEC 18004:2000 Chapter 8.4.5 Page 23</remarks>
+        </member>
+        <member name="F:Gma.QrCodeNet.Encoding.DataEncodation.KanjiEncoder.KANJI_BITCOUNT">
+            <summary>
+            Bitcount according to ISO/IEC 18004:2000 Kanji mode Page 25
+            </summary>
+        </member>
+        <member name="F:Gma.QrCodeNet.Encoding.DataEncodation.KanjiEncoder.MULTIPLY_FOR_msb">
+            <summary>
+            Multiply value for Most significant byte.
+            Chapter 8.4.5 P.24
+            </summary>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.DataEncodation.KanjiEncoder.ConvertShiftJIS(System.Byte,System.Byte)">
+            <remarks>
+            See Chapter 8.4.5 P.24 Kanji Mode
+            </remarks>
+        </member>
+        <member name="T:Gma.QrCodeNet.Encoding.DataEncodation.NumericEncoder">
+            <remarks>ISO/IEC 18004:2000 Chapter 8.4.2 Page 19</remarks>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.EncodingRegion.BCHCalculator.PosMSB(System.Int32)">
+            <summary>
+            Calculate int length by search for Most significant bit
+            </summary>
+            <param name="num">Input Number</param>
+            <returns>Most significant bit</returns>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.EncodingRegion.BCHCalculator.BinarySearchPos(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Search for right side bit of Most significant bit
+            </summary>
+            <param name="num">input number</param>
+            <param name="lowBoundary">lower boundary. At start should be 0</param>
+            <param name="highBoundary">higher boundary. At start should be 32</param>
+            <returns>Most significant bit - 1</returns>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.EncodingRegion.BCHCalculator.CalculateBCH(System.Int32,System.Int32)">
+            <summary>
+            With input number and polynomial number. Method will calculate BCH value and return
+            </summary>
+            <param name="num">input number</param>
+            <param name="poly">Polynomial number</param>
+            <returns>BCH value</returns>
+        </member>
+        <member name="T:Gma.QrCodeNet.Encoding.EncodingRegion.Codeword">
+            <remarks>ISO/IEC 18004:2000 Chapter 8.7.3 Page 46</remarks>
+        </member>
+        <member name="T:Gma.QrCodeNet.Encoding.EncodingRegion.FormatInformation">
+            <summary>
+            6.9 Format information
+            The Format Information is a 15 bit sequence containing 5 data bits, with 10 error correction bits calculated using the (15, 5) BCH code.
+            </summary>
+            <remarks>ISO/IEC 18004:2000 Chapter 8.9 Page 53</remarks>
+        </member>
+        <member name="F:Gma.QrCodeNet.Encoding.EncodingRegion.FormatInformation.s_FormatInfoPoly">
+            <summary>
+            From Appendix C in JISX0510:2004 (p.65).
+            </summary>
+        </member>
+        <member name="F:Gma.QrCodeNet.Encoding.EncodingRegion.FormatInformation.s_FormatInfoMaskPattern">
+            <summary>
+            From Appendix C in JISX0510:2004 (p.65).
+            </summary>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.EncodingRegion.FormatInformation.EmbedFormatInformation(Gma.QrCodeNet.Encoding.TriStateMatrix,Gma.QrCodeNet.Encoding.ErrorCorrectionLevel,Gma.QrCodeNet.Encoding.Masking.Pattern)">
+            <summary>
+            Embed format information to tristatematrix. 
+            Process combination of create info bits, BCH error correction bits calculation, embed towards matrix. 
+            </summary>
+            <remarks>ISO/IEC 18004:2000 Chapter 8.9 Page 53</remarks>
+        </member>
+        <member name="T:Gma.QrCodeNet.Encoding.EncodingRegion.VersionInformation">
+            <summary>
+            Embed version information for version larger or equal to 7. 
+            </summary>
+            <remarks>ISO/IEC 18004:2000 Chapter 8.10 Page 54</remarks>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.EncodingRegion.VersionInformation.EmbedVersionInformation(Gma.QrCodeNet.Encoding.TriStateMatrix,System.Int32)">
+            <summary>
+            Embed version information to Matrix
+            Only for version greater or equal to 7
+            </summary>
+            <param name="tsMatrix">Matrix</param>
+            <param name="version">version number</param>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.ErrorCorrection.ECGenerator.FillECCodewords(Gma.QrCodeNet.Encoding.BitList,Gma.QrCodeNet.Encoding.VersionDetail)">
+            <summary>
+            Generate error correction blocks. Then out put with codewords BitList
+            ISO/IEC 18004/2006 P45, 46. Chapter 6.6 Constructing final message codewords sequence.
+            </summary>
+            <param name="dataCodewords">Datacodewords from DataEncodation.DataEncode</param>
+            <param name="numTotalBytes">Total number of bytes</param>
+            <param name="numDataBytes">Number of data bytes</param>
+            <param name="numECBlocks">Number of Error Correction blocks</param>
+            <returns>codewords BitList contain datacodewords and ECCodewords</returns>
+        </member>
+        <member name="T:Gma.QrCodeNet.Encoding.Masking.Scoring.Penalty1">
+            <summary>
+            ISO/IEC 18004:2000 Chapter 8.8.2 Page 52
+            </summary>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.Masking.Scoring.Penalty1.PenaltyCalculate(Gma.QrCodeNet.Encoding.BitMatrix)">
+            <summary>
+            Calculate penalty value for first rule.
+            </summary>
+        </member>
+        <member name="T:Gma.QrCodeNet.Encoding.Masking.Scoring.Penalty2">
+            <summary>
+            ISO/IEC 18004:2000 Chapter 8.8.2 Page 52
+            </summary>
+        </member>
+        <member name="T:Gma.QrCodeNet.Encoding.Masking.Scoring.Penalty3">
+            <summary>
+            ISO/IEC 18004:2000 Chapter 8.8.2 Page 52
+            </summary>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.Masking.Scoring.Penalty3.PenaltyCalculate(Gma.QrCodeNet.Encoding.BitMatrix)">
+            <summary>
+            Calculate penalty value for Third rule.
+            </summary>
+        </member>
+        <member name="T:Gma.QrCodeNet.Encoding.Masking.Scoring.Penalty4">
+            <summary>
+            ISO/IEC 18004:2000 Chapter 8.8.2 Page 52
+            </summary>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.Masking.Scoring.Penalty4.PenaltyCalculate(Gma.QrCodeNet.Encoding.BitMatrix)">
+            <summary>
+            Calculate penalty value for Fourth rule.
+            Perform O(n) search for available x modules
+            </summary>
+        </member>
+        <member name="T:Gma.QrCodeNet.Encoding.Masking.Scoring.PenaltyFactory">
+            <summary>
+            Description of PenaltyFactory.
+            </summary>
+        </member>
+        <member name="T:Gma.QrCodeNet.Encoding.QrCode">
+            <summary>
+            This class contain two variables. 
+            BitMatrix for QrCode
+            isContainMatrix for indicate whether QrCode contains BitMatrix or not.
+            BitMatrix will equal to null if isContainMatrix is false. 
+            </summary>
+        </member>
+        <member name="T:Gma.QrCodeNet.Encoding.QRCodeConstantVariable">
+            <summary>
+            Contain most of common constant variables. S
+            </summary>
+        </member>
+        <member name="F:Gma.QrCodeNet.Encoding.QRCodeConstantVariable.QRCodePrimitive">
+            <summary>
+            ISO/IEC 18004:2006(E) Page 45 Chapter Generating the error correction codewords
+            Primative Polynomial = Bin 100011101 = Dec 285
+            </summary>
+        </member>
+        <member name="F:Gma.QrCodeNet.Encoding.QRCodeConstantVariable.PadeCodewordsOdd">
+            <summary>
+            0xEC
+            </summary>
+        </member>
+        <member name="F:Gma.QrCodeNet.Encoding.QRCodeConstantVariable.PadeCodewordsEven">
+            <summary>
+            0x11
+            </summary>
+        </member>
+        <member name="P:Gma.QrCodeNet.Encoding.QRCodeConstantVariable.UTF8ByteOrderMark">
+            <summary>
+            URL:http://en.wikipedia.org/wiki/Byte-order_mark
+            </summary>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.QrEncoder.#ctor">
+            <summary>
+            Default QrEncoder will set ErrorCorrectionLevel as M
+            </summary>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.QrEncoder.#ctor(Gma.QrCodeNet.Encoding.ErrorCorrectionLevel)">
+            <summary>
+            QrEncoder with parameter ErrorCorrectionLevel. 
+            </summary>
+            <param name="errorCorrectionLevel"></param>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.QrEncoder.Encode(System.String)">
+            <summary>
+            Encode string content to QrCode matrix
+            </summary>
+            <exception cref="T:Gma.QrCodeNet.Encoding.InputOutOfBoundaryException">
+            This exception for string content is null, empty or too large</exception>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.QrEncoder.TryEncode(System.String,Gma.QrCodeNet.Encoding.QrCode@)">
+            <summary>
+            Try to encode content
+            </summary>
+            <returns>False if input content is empty, null or too large.</returns>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.QrEncoder.Encode(System.Collections.Generic.IEnumerable{System.Byte})">
+            <summary>
+            Encode byte array content to QrCode matrix
+            </summary>
+            <exception cref="T:Gma.QrCodeNet.Encoding.InputOutOfBoundaryException">
+            This exception for string content is null, empty or too large</exception>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.QrEncoder.TryEncode(System.Collections.Generic.IEnumerable{System.Byte},Gma.QrCodeNet.Encoding.QrCode@)">
+            <summary>
+            Try to encode content
+            </summary>
+            <returns>False if input content is empty, null or too large.</returns>
+        </member>
+        <member name="T:Gma.QrCodeNet.Encoding.ReedSolomon.GaloisField256">
+            <summary>
+            Description of GaloisField256.
+            </summary>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.ReedSolomon.GaloisField256.Exponent(System.Int32)">
+            <returns>
+            Powers of a in GF table. Where a = 2
+            </returns>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.ReedSolomon.GaloisField256.Log(System.Int32)">
+            <returns>
+            log ( power of a) in GF table. Where a = 2
+            </returns>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.ReedSolomon.GaloisField256.Product(System.Int32,System.Int32)">
+            <returns>
+            Product of two values. 
+            In other words. a multiply b
+            </returns>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.ReedSolomon.GaloisField256.Quotient(System.Int32,System.Int32)">
+            <returns>
+            Quotient of two values. 
+            In other words. a devided b
+            </returns>
+        </member>
+        <member name="T:Gma.QrCodeNet.Encoding.ReedSolomon.GeneratorPolynomial">
+            <summary>
+            Description of GeneratorPolynomial.
+            </summary>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.ReedSolomon.GeneratorPolynomial.#ctor(Gma.QrCodeNet.Encoding.ReedSolomon.GaloisField256)">
+            <summary>
+            After create GeneratorPolynomial. Keep it as long as possible. 
+            Unless QRCode encode is done or no more QRCode need to generate.
+            </summary>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.ReedSolomon.GeneratorPolynomial.GetGenerator(System.Int32)">
+            <summary>
+            Get generator by degree. (Largest degree for that generator)
+            </summary>
+            <returns>Generator</returns>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.ReedSolomon.GeneratorPolynomial.BuildGenerator(System.Int32)">
+            <summary>
+            Build Generator if we can not find specific degree of generator from cache
+            </summary>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.ReedSolomon.Polynomial.GetCoefficient(System.Int32)">
+            <returns>
+            coefficient position. where (coefficient)x^degree
+            </returns>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.ReedSolomon.Polynomial.AddOrSubtract(Gma.QrCodeNet.Encoding.ReedSolomon.Polynomial)">
+            <summary>
+            Add another Polynomial to current one
+            </summary>
+            <param name="other">The polynomial need to add or subtract to current one</param>
+            <returns>Result polynomial after add or subtract</returns>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.ReedSolomon.Polynomial.Multiply(Gma.QrCodeNet.Encoding.ReedSolomon.Polynomial)">
+            <summary>
+            Multiply current Polynomial to anotherone. 
+            </summary>
+            <returns>Result polynomial after multiply</returns>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.ReedSolomon.Polynomial.MultiplyScalar(System.Int32)">
+            <summary>
+            Multiplay scalar to current polynomial
+            </summary>
+            <returns>result of polynomial after multiply scalar</returns>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.ReedSolomon.Polynomial.Divide(Gma.QrCodeNet.Encoding.ReedSolomon.Polynomial)">
+            <summary>
+            divide current polynomial by "other"
+            </summary>
+            <returns>Result polynomial after divide</returns>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.ReedSolomon.ReedSolomonEncoder.Encode(System.Byte[],System.Int32,Gma.QrCodeNet.Encoding.ReedSolomon.GeneratorPolynomial)">
+            <summary>
+            Encode an array of data codeword with GaloisField 256. 
+            </summary>
+            <param name="dataBytes">Array of data codewords for a single block.</param>
+            <param name="numECBytes">Number of error correction codewords for data codewords</param>
+            <param name="generatorPoly">Cached or newly create GeneratorPolynomial</param>
+            <returns>Return error correction codewords array</returns>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.ReedSolomon.ReedSolomonEncoder.ConvertToIntArray(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Convert data codewords to int array. And add error correction space at end of that array
+            </summary>
+            <param name="dataBytes">data codewords array</param>
+            <param name="dataLength">data codewords length</param>
+            <param name="numECBytes">Num of error correction bytes</param>
+            <returns>Int array for data codewords array follow by error correction space</returns>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.ReedSolomon.ReedSolomonEncoder.ConvertTosByteArray(System.Int32[],System.Int32)">
+            <summary>
+            Reassembly error correction codewords. As Polynomial class will eliminate zero monomial at front. 
+            </summary>
+            <param name="remainder">Remainder byte array after divide. </param>
+            <param name="numECBytes">Error correction codewords length</param>
+            <returns>Error correction codewords</returns>
+        </member>
+        <member name="P:Gma.QrCodeNet.Encoding.SquareBitMatrix.InternalArray">
+            <summary>
+            Return value will be internal array itself. Not deep/shallow copy. 
+            </summary>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.Terminate.Terminator.TerminateBites(Gma.QrCodeNet.Encoding.BitList,System.Int32,System.Int32)">
+            <summary>
+            This method will create BitList that contain 
+            terminator, padding and pad codewords for given datacodewords.
+            Use it to full fill the data codewords capacity. Thus avoid massive empty bits.
+            </summary>
+            <remarks>ISO/IEC 18004:2006 P. 32 33. 
+            Terminator / Bit stream to codeword conversion</remarks>
+            <param name="baseList">Method will add terminator bits at end of baseList</param>
+            <param name="dataCount">Num of bits for datacodewords without terminator</param>
+            <param name="numTotalDataCodewords">Total number of datacodewords for specific version.
+            Receive it under Version/VersionTable</param>
+            <returns>Bitlist that contain Terminator, padding and padcodewords</returns>
+        </member>
+        <member name="P:Gma.QrCodeNet.Encoding.TriStateMatrix.InternalArray">
+            <summary>
+            Return value will be deep copy of array. 
+            </summary>
+        </member>
+        <member name="P:Gma.QrCodeNet.Encoding.VersionDetail.MatrixWidth">
+            <summary>
+            Width for current version
+            </summary>
+        </member>
+        <member name="P:Gma.QrCodeNet.Encoding.VersionDetail.ECBlockGroup1">
+            <summary>
+            number of Error correction blocks for group 1
+            </summary>
+        </member>
+        <member name="P:Gma.QrCodeNet.Encoding.VersionDetail.ECBlockGroup2">
+            <summary>
+            Number of error correction blocks for group 2
+            </summary>
+        </member>
+        <member name="P:Gma.QrCodeNet.Encoding.VersionDetail.NumDataBytesGroup1">
+            <summary>
+            Number of data bytes per block for group 1
+            </summary>
+        </member>
+        <member name="P:Gma.QrCodeNet.Encoding.VersionDetail.NumDataBytesGroup2">
+            <summary>
+            Number of data bytes per block for group 2
+            </summary>
+        </member>
+        <member name="P:Gma.QrCodeNet.Encoding.VersionDetail.NumECBytesPerBlock">
+            <summary>
+            Number of error correction bytes per block
+            </summary>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.Versions.ErrorCorrectionBlocks.GetECBlocks">
+            <summary>
+            Get Error Correction Blocks
+            </summary>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.Versions.ErrorCorrectionBlocks.initialize">
+            <summary>
+            Initialize for NumBlocks and ErrorCorrectionCodewordsPerBlock
+            </summary>
+        </member>
+        <member name="T:Gma.QrCodeNet.Encoding.InputOutOfBoundaryException">
+            <summary>
+            Use this exception for null or empty input string or when input string is too large. 
+            </summary>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.Versions.QRCodeVersion.#ctor(System.Int32,System.Int32,Gma.QrCodeNet.Encoding.Versions.ErrorCorrectionBlocks,Gma.QrCodeNet.Encoding.Versions.ErrorCorrectionBlocks,Gma.QrCodeNet.Encoding.Versions.ErrorCorrectionBlocks,Gma.QrCodeNet.Encoding.Versions.ErrorCorrectionBlocks)">
+            <param name="ecblocks1">L</param>
+            <param name="ecblocks2">M</param>
+            <param name="ecblocks3">Q</param>
+            <param name="ecblocks4">H</param>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.Versions.QRCodeVersion.GetECBlocksByLevel(Gma.QrCodeNet.Encoding.ErrorCorrectionLevel)">
+            <summary>
+            Get Error Correction Blocks by level
+            </summary>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.Versions.VersionControl.InitialSetup(System.Int32,Gma.QrCodeNet.Encoding.DataEncodation.Mode,Gma.QrCodeNet.Encoding.ErrorCorrectionLevel,System.String)">
+            <summary>
+            Determine which version to use
+            </summary>
+            <param name="dataBitsLength">Number of bits for encoded content</param>
+            <param name="encodingName">Encoding name for EightBitByte</param>
+            <returns>VersionDetail and ECI</returns>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.Versions.VersionControl.DynamicSearchIndicator(System.Int32,Gma.QrCodeNet.Encoding.ErrorCorrectionLevel,Gma.QrCodeNet.Encoding.DataEncodation.Mode)">
+            <summary>
+            Decide which version group it belong to
+            </summary>
+            <param name="numBits">number of bits for bitlist where it contain DataBits encode from input content and ECI header</param>
+            <param name="level">Error correction level</param>
+            <param name="mode">Mode</param>
+            <returns>Version group index for VERSION_GROUP</returns>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.Versions.VersionControl.BinarySearch(System.Int32,Gma.QrCodeNet.Encoding.ErrorCorrectionLevel,System.Int32,System.Int32)">
+            <summary>
+            Use number of data bits(header + eci header + data bits from EncoderBase) to search for proper version to use
+            between min and max boundary. 
+            Boundary define by DynamicSearchIndicator method. 
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Gma.QrCodeNet.Encoding.Versions.VersionTable.GetVersionByNum(System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "M:Gma.QrCodeNet.Encoding.Versions.VersionTable.GetVersionByWidth(System.Int32)" -->
+        <member name="M:Gma.QrCodeNet.Encoding.Versions.VersionTable.initialize">
+            <summary>
+            We only need totalCodeWords, dataCodewords and number of blocks. Other variable can be calculate through
+            equation by given that three variables. 
+            This table try to use original table layout for easier error detection. 
+            </summary>
+            <remarks>ISO/IEC 18004/2006 Tabler 9 Page 38
+            Only include non-micro QRCode</remarks>
+            <remarks>Sorted list</remarks>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Gma.QrCodeNet.Encoding.Windows.Render.ColorContrast" -->
+        <member name="M:Gma.QrCodeNet.Encoding.Windows.Render.ColorContrast.GetContrast(Windows.UI.Color,Windows.UI.Color)">
+            <summary>
+            Calculate background and fronntcolor's contrast ratio.
+            To assist dark module and light module's choose. 
+            Higher ratio means easier to decode by decoder.
+            Black and White will have highest ratio = 21.
+            </summary>
+            <param name="backGround">light module color</param>
+            <param name="frontColor">dark module color</param>
+            <returns>Contrast object.</returns>
+        </member>
+        <member name="P:Gma.QrCodeNet.Encoding.Windows.Render.DrawingSize.ModuleSize">
+            <summary>
+            Module pixel width
+            </summary>
+        </member>
+        <member name="P:Gma.QrCodeNet.Encoding.Windows.Render.DrawingSize.CodeWidth">
+            <summary>
+            QrCode pixel width
+            </summary>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.Windows.Render.EncapsulatedPostScriptRenderer.#ctor(Gma.QrCodeNet.Encoding.Windows.Render.ISizeCalculation,Windows.UI.Color,Windows.UI.Color)">
+            <summary>
+            Initializes a Encapsulated PostScript renderer.
+            </summary>
+            <param name="darkColor">DarkColor used to draw Dark modules of the QrCode</param>
+            <param name="lightColor">LightColor used to draw Light modules and QuietZone of the QrCode.
+            Setting to a transparent color (A = 0) allows transparent light modules so the QR Code blends in the existing background.
+            In that case the existing background should remain light and rather uniform, and higher error correction levels are recommended.</param>
+            <param name="quietZoneModules"></param>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.Windows.Render.EncapsulatedPostScriptRenderer.WriteToStream(Gma.QrCodeNet.Encoding.BitMatrix,System.IO.Stream)">
+            <summary>
+            Renders the matrix in an Encapsuled PostScript format.
+            </summary>
+            <param name="matrix">The matrix to be rendered</param>
+            <param name="moduleSize">Size in points (1 inch contains 72 point in PostScript) of a module</param>
+            <param name="stream">Output stream that must be writable</param>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.Windows.Render.EncapsulatedPostScriptRenderer.OutputHeader(Gma.QrCodeNet.Encoding.Windows.Render.DrawingSize,System.IO.StreamWriter)">
+            <summary>
+            Outputs the EPS header with mandatory declarations, variable declarations and function definitions.
+            </summary>
+            <param name="matrix">The matrix to be rendered</param>
+            <param name="moduleSize">Size in points (1 inch contains 72 point in PostScript) of a module</param>
+            <param name="stream">Output text stream</param>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.Windows.Render.EncapsulatedPostScriptRenderer.OutputBackground(System.IO.StreamWriter)">
+            <summary>
+            Outputs the background unless it is defined as transparent. The background is used for light modules and quiet zone.
+            </summary>
+            <param name="matrix">The matrix to be rendered</param>
+            <param name="stream">Output text stream</param>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.Windows.Render.EncapsulatedPostScriptRenderer.DrawSquares(Gma.QrCodeNet.Encoding.BitMatrix,System.IO.StreamWriter)">
+            <summary>
+            Draw a square for each dark module
+            </summary>
+            <param name="matrix">The matrix to be rendered</param>
+            <param name="stream">Output text stream</param>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.Windows.Render.EncapsulatedPostScriptRenderer.DrawImage(Gma.QrCodeNet.Encoding.BitMatrix,System.IO.StreamWriter)">
+            <summary>
+            Use the 'image' or 'colorimage' PostScript command to render modules
+            </summary>
+            <param name="matrix">The matrix to be rendered</param>
+            <param name="stream">Output text stream</param>
+        </member>
+        <member name="M:Gma.QrCodeNet.Encoding.Windows.Render.EncapsulatedPostScriptRenderer.OutputFooter(System.IO.StreamWriter)">
+            <summary>
+            Outputs the mandatory EPS footer.
+            </summary>
+            <param name="stream">Output text stream</param>
+        </member>
+        <member name="P:Gma.QrCodeNet.Encoding.Windows.Render.EncapsulatedPostScriptRenderer.SizeCalculator">
+            <summary>
+            ISizeCalculation for the way to calculate QrCode's pixel size.
+            Ex for ISizeCalculation:FixedCodeSize, FixedModuleSize
+            </summary>
+        </member>
+        <member name="P:Gma.QrCodeNet.Encoding.Windows.Render.EncapsulatedPostScriptRenderer.DarkColor">
+            <summary>
+            DarkColor used to draw Dark modules of the QrCode
+            </summary>
+        </member>
+        <member name="P:Gma.QrCodeNet.Encoding.Windows.Render.EncapsulatedPostScriptRenderer.LightColor">
+            <summary>
+            LightColor used to draw Light modules and QuietZone of the QrCode.
+            Setting to a transparent color (A = 0) allows transparent light modules so the QR Code blends in the existing background.
+            In that case the existing background should remain light and rather uniform, and higher error correction levels are recommended.
+            </summary>
+        </member>
+        <member name="P:Gma.QrCodeNet.Encoding.Windows.Render.EncapsulatedPostScriptRenderer.DrawingTechnique">
+            <summary>
+            Selection of the technique used to draw the modules. 'Squares' draws vector squares one by one; 'Image' uses the 'image' or 'colorimage' PostScript command.
+            'Squares' supports transparency of light modules and often has smaller file size for color QR Codes.
+            'Image' might be faster to render on some devices as it is a single command.
+            </summary>
+        </member>
+    </members>
+</doc>
