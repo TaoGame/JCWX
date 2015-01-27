@@ -97,14 +97,19 @@
     <Compile Include="Merchant\MerchantStockReductTest.cs" />
     <Compile Include="Merchant\MerchantUpdateTest.cs" />
     <Compile Include="MessageCustomSendRequestTest.cs" />
+    <Compile Include="MockGetcallbackipTestTest.cs" />
     <Compile Include="MockPostApiBaseTest.cs" />
     <Compile Include="OAuthAccessTokenTest.cs" />
     <Compile Include="OAuthManagerTest.cs" />
     <Compile Include="OAuthRefreshTokenTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QrCreatedRequestTestTest.cs" />
     <Compile Include="RequestMessageTest.cs" />
     <Compile Include="ResponseMessageTest.cs" />
+    <Compile Include="ShorturlRequestTestTest.cs" />
     <Compile Include="SNSUserInfoTest.cs" />
+    <Compile Include="Template\TemplateSendTest.cs" />
+    <Compile Include="Template\TemplateSetindustrayTest.cs" />
     <Compile Include="UserGetTest.cs" />
     <Compile Include="UserInfoTest.cs" />
   </ItemGroup>

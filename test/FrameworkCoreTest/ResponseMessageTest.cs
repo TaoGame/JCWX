@@ -83,5 +83,30 @@ namespace FrameworkCoreTest
 
             Console.WriteLine(response.Serializable());
         }
+
+        [Fact]
+        public void ResponseNewsMessageTest()
+        {
+            var response = new ResponseNewsMessage
+            {
+                FromUserName = "jamesying",
+                ToUserName = "ying",
+                ArticleCount = 1,
+                Articles = new List<ArticleMessage>
+                {
+                    new ArticleMessage{
+                        Author = "james",
+                        Url = "http://www.test.com",
+                        ThumbMediaId = "http://123123123.com",
+                        Content = "test content",
+                        PicUrl = "aljslkdjflkasdf",
+                        Description = "askdlfkjasdf",
+                        Title = "test title"
+                    },
+                }
+            };
+
+            Console.WriteLine(response.Serializable());
+        }
     }
 }

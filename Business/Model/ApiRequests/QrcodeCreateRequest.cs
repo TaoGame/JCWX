@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +32,7 @@ namespace WX.Model.ApiRequests
         public int ExpireSeconds { get; set; }
 
         [JsonProperty("action_name", DefaultValueHandling= DefaultValueHandling.Ignore)]
+        [JsonConverter(typeof(StringEnumConverter))]
         public ActionName ActionName { get; set; }
 
         [JsonProperty("action_info")]
