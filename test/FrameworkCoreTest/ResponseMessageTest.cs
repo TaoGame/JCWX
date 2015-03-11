@@ -73,7 +73,7 @@ namespace FrameworkCoreTest
                 CreateTime = 123123,
                 Music = new MusicMessage
                 {
-                    MusicURL = "asdfasdf",
+                    MusicUrl = "asdfasdf",
                     HQMusicUrl = "asdfasdf",
                     ThumbMediaId = "asdfasdf",
                     Description = "123123",

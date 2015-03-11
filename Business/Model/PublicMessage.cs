@@ -32,8 +32,11 @@ namespace WX.Model
             NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
+        /// <summary>
+        /// 感谢C#-古道-广州发现的bug
+        /// </summary>
         [JsonProperty("musicurl")]
-        public string MusicURL { get; set; }
+        public string MusicUrl { get; set; }
 
         [JsonProperty("hqmusicurl")]
         public string HQMusicUrl { get; set; }

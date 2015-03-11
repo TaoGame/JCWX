@@ -65,7 +65,9 @@
     <Content Include="Oauth2Demo.aspx" />
     <Content Include="OAuthUserInfoDemo.aspx" />
     <Content Include="QrcodePage.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="WX.aspx" />
   </ItemGroup>
   <ItemGroup>

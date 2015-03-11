@@ -61,7 +61,7 @@ namespace FrameworkCoreTest
                 {
                     Title = "test music title",
                     HQMusicUrl = "hqmusicurl",
-                    MusicURL = "musicurl",
+                    MusicUrl = "musicurl",
                     ThumbMediaId = "media_id"
                 }
             };
