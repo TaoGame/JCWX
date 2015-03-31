@@ -39,7 +39,7 @@ namespace WebDemo
                 Brushes.Black, Brushes.White);
 
             MemoryStream ms = new MemoryStream();
-            gRenderer.WriteToStream(qrCode.Matrix, ImageFormat.Png, ms);
+            gRenderer.WriteToStream(qrCode.Matrix, ImageFormat.Jpeg, ms);
 
             Response.BinaryWrite(ms.ToArray());
         }

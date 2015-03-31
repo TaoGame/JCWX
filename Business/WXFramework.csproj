@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiAccessTokenManager.cs" />
+    <Compile Include="Common\DataSecret.cs" />
     <Compile Include="Common\ShelfModuleConverter.cs" />
     <Compile Include="CustomAccount.cs" />
     <Compile Include="Model\ApiRequests\CustomserviceGetkflistRequest.cs" />
@@ -224,6 +225,18 @@
     <Compile Include="Model\WXMessage.cs" />
     <Compile Include="NotHandlerMessage.cs" />
     <Compile Include="OAuth\OAuthHelper.cs" />
+    <Compile Include="Pay\Request\PayCloseorderRequest.cs" />
+    <Compile Include="Pay\Request\PayOrderqueryRequest.cs" />
+    <Compile Include="Pay\Request\PayRefundQueryRequest.cs" />
+    <Compile Include="Pay\Request\PayRefundRequest.cs" />
+    <Compile Include="Pay\Request\PayRequest.cs" />
+    <Compile Include="Pay\Request\PayUnifiedOrderRequest.cs" />
+    <Compile Include="Pay\Response\PayCloseorderResponse.cs" />
+    <Compile Include="Pay\Response\PayOrderqueryResponse.cs" />
+    <Compile Include="Pay\Response\PayRefundQueryResponse.cs" />
+    <Compile Include="Pay\Response\PayRefundResponse.cs" />
+    <Compile Include="Pay\Response\PayResponse.cs" />
+    <Compile Include="Pay\Response\PayUnifiedOrderResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

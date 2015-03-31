@@ -173,5 +173,38 @@ namespace WX.Common
                 return result;
             }
         }
+
+        public static string HttpPostXml(string url, string content)
+        {
+            HttpWebRequest req = HttpWebRequest.Create(url)
+                     as HttpWebRequest;
+
+            if (req == null)
+                throw new ArgumentException();
+            var postdate = content;
+            var postBytes = Encoding.UTF8.GetBytes(postdate);
+            req.Method = "POST";
+            req.ContentType = "text/xml; charset=utf-8";
+            req.ContentLength = postBytes.Length;
+            Stream stream = req.GetRequestStream();
+            stream.Write(postBytes, 0, postBytes.Length);
+            stream.Close();
+
+            HttpWebResponse res = (HttpWebResponse)req.GetResponse();
+            if (res.StatusCode != HttpStatusCode.OK)
+                throw new WebException("code" + res.StatusCode);
+
+
+            using (var rstream = res.GetResponseStream())
+            using (var reader = new System.IO.StreamReader(rstream, Encoding.UTF8))
+            {
+                var result = reader.ReadToEnd();
+                reader.Close();
+                rstream.Close();
+
+                //res.Close();
+                return result;
+            }
+        }
     }
 }
