@@ -6,6 +6,7 @@ using System.Xml.Serialization;
 
 namespace WX.Pay.Request
 {
+    [XmlRoot("xml")]
     public class PayOrderqueryRequest : PayRequest
     {
         [XmlIgnore]

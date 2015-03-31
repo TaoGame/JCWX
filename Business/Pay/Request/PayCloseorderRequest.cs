@@ -6,6 +6,7 @@ using System.Xml.Serialization;
 
 namespace WX.Pay.Request
 {
+    [XmlRoot("xml")]
     public class PayCloseorderRequest : PayRequest
     {
         [XmlIgnore]
@@ -36,7 +37,7 @@ namespace WX.Pay.Request
         /// 商户订单号
         /// </summary>
         [XmlElement("nonce_str")]
-        public string OutTradeNo
+        public string NonceStr
         {
             get { return nonce_str; }
             set

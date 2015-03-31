@@ -6,6 +6,7 @@ using System.Xml.Serialization;
 
 namespace WX.Pay.Response
 {
+    [XmlRoot("xml")]
     public abstract class PayResponse
     {
         /// <summary>

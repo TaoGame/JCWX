@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Xml;
 using System.Xml.Serialization;
 using WX.Common;
 
 namespace WX.Pay.Request
 {
+    [XmlRoot("xml")]
     public abstract class PayRequest
     {
         private string appid;
@@ -102,13 +104,26 @@ namespace WX.Pay.Request
 
         public String Serializable()
         {
-            var sw = new StringWriter();
-            var xmlSerializer = new XmlSerializer(this.GetType());
-            var ns = new XmlSerializerNamespaces();
-            ns.Add("", "");
-            xmlSerializer.Serialize(sw, this, ns);
+            var stream = new MemoryStream();
+            XmlWriterSettings settings = new XmlWriterSettings();
+            settings.Indent = true;
+            settings.Encoding = Encoding.UTF8;
+            settings.OmitXmlDeclaration = true;
+            
+            using (var sw = XmlWriter.Create(stream, settings))
+            {
+                var xmlSerializer = new XmlSerializer(this.GetType());
+                
+                var ns = new XmlSerializerNamespaces();
+                ns.Add("", "");
+                xmlSerializer.Serialize(sw, this, ns);
+            }
 
-            return sw.ToString();
+            stream.Position = 0;
+            using (var reader = new StreamReader(stream, Encoding.UTF8))
+            {
+                return reader.ReadToEnd();
+            }
         }
     }
 }

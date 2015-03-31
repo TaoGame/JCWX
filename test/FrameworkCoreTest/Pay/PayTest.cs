@@ -23,7 +23,10 @@ namespace FrameworkCoreTest.Pay
             Console.WriteLine("------------------");
             var xml = GetResponseXml();
             Console.WriteLine("api response:{0}", xml);
-            Assert.IsType<K>(ParseResponse(xml));
+            K k = ParseResponse(xml);
+            Console.WriteLine(k.AppId);
+            Console.WriteLine(k.DeviceInfo);
+            Assert.IsType<K>(k);
         }
 
         protected abstract T GetRequest();

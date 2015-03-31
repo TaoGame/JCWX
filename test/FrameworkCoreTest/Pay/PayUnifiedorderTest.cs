@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 using WX.Pay.Request;
 using WX.Pay.Response;
 
@@ -49,7 +51,11 @@ namespace FrameworkCoreTest.Pay
 
         protected override PayUnifiedOrderResponse ParseResponse(string xml)
         {
-            throw new NotImplementedException();
+            var stream = new MemoryStream(Encoding.Default.GetBytes(xml));
+            var xs = new XmlSerializer(typeof(PayUnifiedOrderResponse), "");
+            return (PayUnifiedOrderResponse)xs.Deserialize(stream);
         }
+
+        
     }
 }
