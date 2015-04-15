@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccessTokenTest.cs" />
+    <Compile Include="Api\GetCurrentAutoreplyInfoTest.cs" />
     <Compile Include="BaseTest.cs" />
     <Compile Include="Api\CustomeServiceGetRecordTest.cs" />
     <Compile Include="Api\GroupCreateTest.cs" />

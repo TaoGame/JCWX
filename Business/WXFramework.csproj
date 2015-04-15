@@ -65,6 +65,7 @@
     <Compile Include="Model\ApiRequests\CustomserviceKfaccountUploadheadimgRequest.cs" />
     <Compile Include="Model\ApiRequests\CustomservicesKfaccountDelRequest.cs" />
     <Compile Include="Model\ApiRequests\GetcallbackipRequest.cs" />
+    <Compile Include="Model\ApiRequests\GetCurrentAutoreplyInfoRequest.cs" />
     <Compile Include="Model\ApiRequests\MerchantCommonUploadimgRequest.cs" />
     <Compile Include="Model\ApiRequests\MerchantOrderCloseRequest.cs" />
     <Compile Include="Model\ApiRequests\MerchantOrderGetbyidRequest.cs" />
@@ -146,6 +147,7 @@
     <Compile Include="Model\ApiResponses\CustomServiceGetRecordResponse.cs" />
     <Compile Include="Model\ApiResponses\DefaultResponse.cs" />
     <Compile Include="Model\ApiResponses\GetcallbackipResponse.cs" />
+    <Compile Include="Model\ApiResponses\GetCurrentAutoreplyInfoResponse.cs" />
     <Compile Include="Model\ApiResponses\GroupCreateResponse.cs" />
     <Compile Include="Model\ApiResponses\GroupsGetIdResponse.cs" />
     <Compile Include="Model\ApiResponses\GroupsMembersUpdateResponse.cs" />
