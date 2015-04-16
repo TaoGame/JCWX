@@ -224,6 +224,12 @@ namespace WX.Model
         public string MatchMode { get; set; }
     }
 
+    public class NewsInfo
+    {
+        [JsonProperty("list")]
+        public IEnumerable<KeywordReplyNews> List { get; set; }
+    }
+
     public class KeywordReplyNews
     {
         /// <summary>
@@ -295,8 +301,43 @@ namespace WX.Model
 
     public class KeywordAutoreplyInfo
     {
-       
         [JsonProperty("list")]
         public IEnumerable<KeywordRule> List { get; set; }
+    }
+
+    public class SelfMenuInfo
+    {
+        [JsonProperty("button")]
+        public IEnumerable<ClickMenuInfo> Buttons { get; set; }
+    }
+
+    public class ClickMenuInfo
+    {
+        [JsonProperty("type")]
+        public string Type { get; set; }
+
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
+        [JsonProperty("key")]
+        public string Key { get; set; }
+
+        [JsonProperty("url")]
+        public string Url { get; set; }
+
+        [JsonProperty("value")]
+        public string Value { get; set; }
+
+        [JsonProperty("news_info")]
+        public NewsInfo NewsInfo { get; set; }
+
+        [JsonProperty("sub_button", NullValueHandling = NullValueHandling.Ignore)]
+        public SubButton SubButton { get; set; }
+    }
+
+    public class SubButton
+    {
+        [JsonProperty("list")]
+        public IEnumerable<ClickMenuInfo> Buttons { get; set; }
     }
 }

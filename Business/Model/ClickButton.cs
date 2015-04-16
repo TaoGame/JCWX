@@ -41,5 +41,8 @@ namespace WX.Model
         [JsonProperty("sub_button",
             NullValueHandling = NullValueHandling.Ignore)]
         public IEnumerable<ClickButton> SubButton { get; set; }
+
+        [JsonProperty("news_info", NullValueHandling = NullValueHandling.Ignore)]
+        public NewsInfo NewsInfo { get; set; }
     }
 }
