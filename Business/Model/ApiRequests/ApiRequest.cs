@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using WX.Logger;
 using WX.Model.ApiResponses;
 using WX.Model.Exceptions;
 
@@ -10,7 +11,7 @@ namespace WX.Model.ApiRequests
 {
     public abstract class ApiRequest<T>
         where T : ApiResponse
-    {
+    {   
         protected const string POSTMETHOD = "POST";
         protected const string GETMETHOD = "GET";
         protected const string FILEMETHOD = "FILE";
@@ -18,6 +19,9 @@ namespace WX.Model.ApiRequests
         internal abstract string Method { get; }
 
         protected abstract string UrlFormat { get; }
+
+        [JsonIgnore]
+        public ILogger Logger { get; set; }
 
         internal abstract string GetUrl();
 
@@ -35,7 +39,19 @@ namespace WX.Model.ApiRequests
         {
             if (NeedToken && String.IsNullOrEmpty(AccessToken))
             {
-                throw new WXApiException(-99, "AccessToken 为空或已过期");
+                Log(new WXApiException(-99, "AccessToken 为空或已过期"));
+            }
+        }
+
+        public void Log(Exception ex)
+        {
+            if (Logger == null)
+            {
+                throw ex;
+            }
+            else
+            {
+                Logger.Log(ex.ToString());
             }
         }
 

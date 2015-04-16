@@ -340,4 +340,41 @@ namespace WX.Model
         [JsonProperty("list")]
         public IEnumerable<ClickMenuInfo> Buttons { get; set; }
     }
+
+    /// <summary>
+    /// 用户统计数据
+    /// </summary>
+    public class UserDatacube
+    {
+        /// <summary>
+        /// 数据的日期
+        /// </summary>
+        [JsonProperty("ref_date")]
+        public string RefDate { get; set; }
+
+        /// <summary>
+        /// 用户的渠道，数值代表的含义如下：
+        ///0代表其他 30代表扫二维码 17代表名片分享 35代表搜号码（即微信添加朋友页的搜索） 39代表查询微信公众帐号 43代表图文页右上角菜单
+        /// </summary>
+        [JsonProperty("user_source")]
+        public int UserSource { get; set; }
+
+        /// <summary>
+        /// 新增的用户数量
+        /// </summary>
+        [JsonProperty("new_user")]
+        public int NewUser { get; set; }
+
+        /// <summary>
+        /// 取消关注的用户数量，new_user减去cancel_user即为净增用户数量
+        /// </summary>
+        [JsonProperty("cancel_user")]
+        public int CanelUser { get; set; }
+
+        /// <summary>
+        /// 总用户量
+        /// </summary>
+        [JsonProperty("cumulate_user")]
+        public int CumulateUser { get; set; }
+    }
 }

@@ -54,6 +54,19 @@ namespace FrameworkCoreTest
             Console.WriteLine(Request.GetPostContent());
         }
 
+        [Fact]
+        public virtual void MockResponseTypeTest()
+        {
+            MockSetup(false);
+            var response = GetResponse();
+            Assert.IsType<TResponse>(response);
+        }
+
+        public virtual TResponse GetResponse()
+        {
+            throw new NotImplementedException();
+        }
+
         protected string JsonSerialize(object obj)
         {
             return JsonConvert.SerializeObject(obj);

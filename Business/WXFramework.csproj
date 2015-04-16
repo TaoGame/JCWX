@@ -58,12 +58,15 @@
     <Compile Include="Common\DataSecret.cs" />
     <Compile Include="Common\ShelfModuleConverter.cs" />
     <Compile Include="CustomAccount.cs" />
+    <Compile Include="Logger\ILogger.cs" />
     <Compile Include="Model\ApiRequests\CustomserviceGetkflistRequest.cs" />
     <Compile Include="Model\ApiRequests\CustomserviceGetonlinekflistRequest.cs" />
     <Compile Include="Model\ApiRequests\CustomserviceKfaccountAddRequest.cs" />
     <Compile Include="Model\ApiRequests\CustomserviceKfaccountUpdateRequest.cs" />
     <Compile Include="Model\ApiRequests\CustomserviceKfaccountUploadheadimgRequest.cs" />
     <Compile Include="Model\ApiRequests\CustomservicesKfaccountDelRequest.cs" />
+    <Compile Include="Model\ApiRequests\DatacubeGetUserCumulateRequest.cs" />
+    <Compile Include="Model\ApiRequests\DatacubeGetUserSummaryRequest.cs" />
     <Compile Include="Model\ApiRequests\GetcallbackipRequest.cs" />
     <Compile Include="Model\ApiRequests\GetCurrentAutoreplyInfoRequest.cs" />
     <Compile Include="Model\ApiRequests\GetCurrentSelfmenuInfoRequest.cs" />
@@ -146,6 +149,8 @@
     <Compile Include="Model\ApiResponses\CustomserviceGetkflistResponse.cs" />
     <Compile Include="Model\ApiResponses\CustomserviceGetonlinekflistResponse.cs" />
     <Compile Include="Model\ApiResponses\CustomServiceGetRecordResponse.cs" />
+    <Compile Include="Model\ApiResponses\DatacubeGetUserCumulateResponse.cs" />
+    <Compile Include="Model\ApiResponses\DatacubeGetUserSummaryResponse.cs" />
     <Compile Include="Model\ApiResponses\DefaultResponse.cs" />
     <Compile Include="Model\ApiResponses\GetcallbackipResponse.cs" />
     <Compile Include="Model\ApiResponses\GetCurrentAutoreplyInfoResponse.cs" />
