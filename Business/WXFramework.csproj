@@ -65,7 +65,13 @@
     <Compile Include="Model\ApiRequests\CustomserviceKfaccountUpdateRequest.cs" />
     <Compile Include="Model\ApiRequests\CustomserviceKfaccountUploadheadimgRequest.cs" />
     <Compile Include="Model\ApiRequests\CustomservicesKfaccountDelRequest.cs" />
+    <Compile Include="Model\ApiRequests\DatacubeGetarticlesummaryRequest.cs" />
+    <Compile Include="Model\ApiRequests\DatacubeGetarticletotalRequest.cs" />
     <Compile Include="Model\ApiRequests\DatacubeGetUserCumulateRequest.cs" />
+    <Compile Include="Model\ApiRequests\DatacubeGetuserreadhourRequest.cs" />
+    <Compile Include="Model\ApiRequests\DatacubeGetuserreadRequest.cs" />
+    <Compile Include="Model\ApiRequests\DatacubeGetusersharehourRequest.cs" />
+    <Compile Include="Model\ApiRequests\DatacubeGetusershareRequest.cs" />
     <Compile Include="Model\ApiRequests\DatacubeGetUserSummaryRequest.cs" />
     <Compile Include="Model\ApiRequests\GetcallbackipRequest.cs" />
     <Compile Include="Model\ApiRequests\GetCurrentAutoreplyInfoRequest.cs" />
@@ -149,6 +155,7 @@
     <Compile Include="Model\ApiResponses\CustomserviceGetkflistResponse.cs" />
     <Compile Include="Model\ApiResponses\CustomserviceGetonlinekflistResponse.cs" />
     <Compile Include="Model\ApiResponses\CustomServiceGetRecordResponse.cs" />
+    <Compile Include="Model\ApiResponses\DatacubeGetArticlesResponse.cs" />
     <Compile Include="Model\ApiResponses\DatacubeGetUserCumulateResponse.cs" />
     <Compile Include="Model\ApiResponses\DatacubeGetUserSummaryResponse.cs" />
     <Compile Include="Model\ApiResponses\DefaultResponse.cs" />
@@ -160,6 +167,7 @@
     <Compile Include="Model\ApiResponses\GroupsMembersUpdateResponse.cs" />
     <Compile Include="Model\ApiResponses\GroupsQueryResponse.cs" />
     <Compile Include="Model\ApiResponses\GroupsUpdateResponse.cs" />
+    <Compile Include="Model\ApiResponses\JsonProperty.cs" />
     <Compile Include="Model\ApiResponses\MediaGetResponse.cs" />
     <Compile Include="Model\ApiResponses\MediaUploadNewsResponse.cs" />
     <Compile Include="Model\ApiResponses\MediaUploadResponse.cs" />

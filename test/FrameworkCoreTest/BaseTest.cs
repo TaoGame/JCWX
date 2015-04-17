@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WX.Api;
 using WX.Framework;
+using WX.Logger;
 using WX.Model;
 
 namespace FrameworkCoreTest
@@ -25,6 +26,8 @@ namespace FrameworkCoreTest
         protected IApiClient m_client = new DefaultApiClient();
 
         protected Mock<DefaultApiClient> mock_client = new Mock<DefaultApiClient>();
+
+       // protected Mock<ILogger> mock_logger = new Mock<ILogger>();
 
         public virtual string GetCurrentToken()
         {

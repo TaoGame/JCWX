@@ -52,6 +52,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccessTokenTest.cs" />
+    <Compile Include="Api\DatacubeGetarticlesummaryTest.cs" />
+    <Compile Include="Api\DAtacubeGetarticletotalTest.cs" />
     <Compile Include="Api\DatacubeGetUserSummaryTest.cs" />
     <Compile Include="Api\GetCurrentAutoreplyInfoTest.cs" />
     <Compile Include="Api\GetCurrentSelfmenuInfoTest.cs" />
@@ -68,6 +70,7 @@
     <Compile Include="Api\MenuCreateTest.cs" />
     <Compile Include="Api\MenuGetTest.cs" />
     <Compile Include="DatacubeGetUserCumulateTest.cs" />
+    <Compile Include="Logger.cs" />
     <Compile Include="Merchant\CreateTest.cs" />
     <Compile Include="Merchant\MerchantCategoryGetskuTest.cs" />
     <Compile Include="Merchant\MerchantCategoryGetsubTest.cs" />

@@ -37,6 +37,7 @@ namespace WX.Model.ApiRequests
 
         internal virtual void Validate()
         {
+            Log(GetUrl());
             if (NeedToken && String.IsNullOrEmpty(AccessToken))
             {
                 Log(new WXApiException(-99, "AccessToken 为空或已过期"));
@@ -52,6 +53,14 @@ namespace WX.Model.ApiRequests
             else
             {
                 Logger.Log(ex.ToString());
+            }
+        }
+
+        public void Log(string content)
+        {
+            if (Logger != null)
+            {
+                Logger.Log(content);
             }
         }
 

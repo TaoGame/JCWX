@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using WX.Common;
+using WX.Logger;
 using WX.Model.ApiRequests;
 using WX.Model.ApiResponses;
 
@@ -13,6 +14,8 @@ namespace WX.Api
 {
     public class DefaultApiClient : IApiClient
     {
+        public ILogger Logger { get; set; }
+
         public T Execute<T>(ApiRequest<T> request)
             where T : ApiResponse, new()
         {
@@ -26,6 +29,7 @@ namespace WX.Api
             }
             catch(Exception ex)
             {
+                Log(ex.ToString());
                 result = null;
             }
             
@@ -47,29 +51,33 @@ namespace WX.Api
         public virtual string DoExecute<T>(ApiRequest<T> request)
             where T : ApiResponse
         {
-            //HttpWebRequest req = HttpWebRequest.Create(request.GetUrl())
-            //         as HttpWebRequest;
-
-            //if (req == null)
-            //    throw new ArgumentException();
-
+            var url = request.GetUrl();
+            //Log(url);
             var result = String.Empty;
             switch (request.Method)
             {
                 case "FILE":
-                    result = HttpHelper.HttpUploadFile(request.GetUrl(), request.GetPostContent());
+                    result = HttpHelper.HttpUploadFile(url, request.GetPostContent());
                     break;
                 case "POST":
-                    result = HttpHelper.HttpPost(request.GetUrl(), request.GetPostContent());
+                    result = HttpHelper.HttpPost(url, request.GetPostContent());
                     break;
                 case "GET":
                 default:
-                    result = HttpHelper.HttpGet(request.GetUrl());
+                    result = HttpHelper.HttpGet(url);
                     break;
             }
 
             return result;
 
+        }
+
+        public void Log(string content)
+        {
+            if (Logger != null)
+            {
+                Logger.Log(content);
+            }
         }
     }
 }

@@ -24,6 +24,7 @@ namespace FrameworkCoreTest
                 if (m_request == null)
                 {
                     m_request = InitRequestObject();
+                    m_request.Logger = new Logger();
                 }
 
                 return m_request;
