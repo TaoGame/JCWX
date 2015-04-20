@@ -61,6 +61,12 @@ namespace FrameworkCoreTest
             MockSetup(false);
             var response = GetResponse();
             Assert.IsType<TResponse>(response);
+            var pro = response.GetType().GetProperties();
+            foreach (var p in pro)
+            {
+                Console.WriteLine("{0}:{1}", p.Name, JsonConvert.SerializeObject(p.GetValue(response)));
+                
+            }
         }
 
         public virtual TResponse GetResponse()

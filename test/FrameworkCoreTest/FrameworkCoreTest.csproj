@@ -52,6 +52,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccessTokenTest.cs" />
+    <Compile Include="Api\CustomserviceKfsessionCloseTest.cs" />
+    <Compile Include="Api\CustomserviceKfsessionCreateTest.cs" />
+    <Compile Include="Api\CustomserviceKfsessionGetsessionTest.cs" />
     <Compile Include="Api\DatacubeGetarticlesummaryTest.cs" />
     <Compile Include="Api\DAtacubeGetarticletotalTest.cs" />
     <Compile Include="Api\DatacubeGetInterfaceTest.cs" />
@@ -71,7 +74,9 @@
     <Compile Include="Api\MediaUploadTest.cs" />
     <Compile Include="Api\MenuCreateTest.cs" />
     <Compile Include="Api\MenuGetTest.cs" />
-    <Compile Include="DatacubeGetUserCumulateTest.cs" />
+    <Compile Include="Api\DatacubeGetUserCumulateTest.cs" />
+    <Compile Include="CustomserviceKfsessionGetsessionlistTest.cs" />
+    <Compile Include="CustomserviceKfsessionGetwaitcaseTest.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Merchant\CreateTest.cs" />
     <Compile Include="Merchant\MerchantCategoryGetskuTest.cs" />
