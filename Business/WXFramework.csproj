@@ -67,6 +67,14 @@
     <Compile Include="Model\ApiRequests\CustomservicesKfaccountDelRequest.cs" />
     <Compile Include="Model\ApiRequests\DatacubeGetarticlesummaryRequest.cs" />
     <Compile Include="Model\ApiRequests\DatacubeGetarticletotalRequest.cs" />
+    <Compile Include="Model\ApiRequests\DatacubeGetStreamMsgRequest.cs" />
+    <Compile Include="Model\ApiRequests\DatacubeGetUpStreamMsgDistMonth.cs" />
+    <Compile Include="Model\ApiRequests\DatacubeGetUpStreamMsgDistRequest.cs" />
+    <Compile Include="Model\ApiRequests\DatacubeGetUpStreamMsgDistWeek.cs" />
+    <Compile Include="Model\ApiRequests\DatacubeGetUpStreamMsgHourRequest.cs" />
+    <Compile Include="Model\ApiRequests\DatacubeGetUpStreamMsgMonthRequest.cs" />
+    <Compile Include="Model\ApiRequests\DatacubeGetUpStreamMsgRequest.cs" />
+    <Compile Include="Model\ApiRequests\DatacubeGetUpStreamMsgWeekRequest.cs" />
     <Compile Include="Model\ApiRequests\DatacubeGetUserCumulateRequest.cs" />
     <Compile Include="Model\ApiRequests\DatacubeGetuserreadhourRequest.cs" />
     <Compile Include="Model\ApiRequests\DatacubeGetuserreadRequest.cs" />
@@ -156,6 +164,7 @@
     <Compile Include="Model\ApiResponses\CustomserviceGetonlinekflistResponse.cs" />
     <Compile Include="Model\ApiResponses\CustomServiceGetRecordResponse.cs" />
     <Compile Include="Model\ApiResponses\DatacubeGetArticlesResponse.cs" />
+    <Compile Include="Model\ApiResponses\DatacubeGetStreamMsgResponse.cs" />
     <Compile Include="Model\ApiResponses\DatacubeGetUserCumulateResponse.cs" />
     <Compile Include="Model\ApiResponses\DatacubeGetUserSummaryResponse.cs" />
     <Compile Include="Model\ApiResponses\DefaultResponse.cs" />
