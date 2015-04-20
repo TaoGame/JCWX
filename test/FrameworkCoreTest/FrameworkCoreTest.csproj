@@ -54,6 +54,7 @@
     <Compile Include="AccessTokenTest.cs" />
     <Compile Include="Api\DatacubeGetarticlesummaryTest.cs" />
     <Compile Include="Api\DAtacubeGetarticletotalTest.cs" />
+    <Compile Include="Api\DatacubeGetInterfaceTest.cs" />
     <Compile Include="Api\DatacubeGetUpStreamMsgTest.cs" />
     <Compile Include="Api\DatacubeGetUserSummaryTest.cs" />
     <Compile Include="Api\GetCurrentAutoreplyInfoTest.cs" />

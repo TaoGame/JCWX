@@ -526,4 +526,43 @@ namespace WX.Model
         [JsonProperty("ori_page_read_user")]
         public int OriPageReadUser { get; set; }
     }
+
+    public class DatacubeInterface
+    {
+        /// <summary>
+        /// 数据的日期，需在begin_date和end_date之间
+        /// </summary>
+        [JsonProperty("ref_date")]
+        public string RefDate { get; set; }
+
+        /// <summary>
+        /// 数据的小时，包括从000到2300，分别代表的是[000,100)到[2300,2400)，即每日的第1小时和最后1小时
+        /// </summary>
+        [JsonProperty("ref_hour")]
+        public int RefHour { get; set; }
+
+        /// <summary>
+        /// 通过服务器配置地址获得消息后，被动回复用户消息的次数
+        /// </summary>
+        [JsonProperty("callback_count")]
+        public int CallbackCount { get; set; }
+
+        /// <summary>
+        /// 上述动作的失败次数
+        /// </summary>
+        [JsonProperty("fail_count")]
+        public int FailCount { get; set; }
+
+        /// <summary>
+        /// 总耗时，除以callback_count即为平均耗时
+        /// </summary>
+        [JsonProperty("total_time_cost")]
+        public long TotalTimeCost { get; set; }
+
+        /// <summary>
+        /// 最大耗时
+        /// </summary>
+        [JsonProperty("max_time_cost")]
+        public long MaxTimeCost { get; set; }
+    }
 }
