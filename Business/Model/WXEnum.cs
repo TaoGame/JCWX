@@ -16,6 +16,7 @@ namespace WX.Model
         Event,
         News,
         Music,
+        ShortVideo,
         transfer_customer_service
     }
 

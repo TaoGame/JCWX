@@ -87,6 +87,7 @@
     <Compile Include="Model\ApiRequests\GetcallbackipRequest.cs" />
     <Compile Include="Model\ApiRequests\GetCurrentAutoreplyInfoRequest.cs" />
     <Compile Include="Model\ApiRequests\GetCurrentSelfmenuInfoRequest.cs" />
+    <Compile Include="Model\ApiRequests\MaterialAddNewsRequest.cs" />
     <Compile Include="Model\ApiRequests\MerchantCommonUploadimgRequest.cs" />
     <Compile Include="Model\ApiRequests\MerchantOrderCloseRequest.cs" />
     <Compile Include="Model\ApiRequests\MerchantOrderGetbyidRequest.cs" />
@@ -181,6 +182,7 @@
     <Compile Include="Model\ApiResponses\GroupsQueryResponse.cs" />
     <Compile Include="Model\ApiResponses\GroupsUpdateResponse.cs" />
     <Compile Include="Model\ApiResponses\JsonProperty.cs" />
+    <Compile Include="Model\ApiResponses\MaterialAddNewsResponse.cs" />
     <Compile Include="Model\ApiResponses\MediaGetResponse.cs" />
     <Compile Include="Model\ApiResponses\MediaUploadNewsResponse.cs" />
     <Compile Include="Model\ApiResponses\MediaUploadResponse.cs" />
@@ -236,6 +238,7 @@
     <Compile Include="Model\Request\RequestMessage.cs" />
     <Compile Include="Model\Request\RequestOrderEventMessage.cs" />
     <Compile Include="Model\Request\RequestQREventMessage.cs" />
+    <Compile Include="Model\Request\RequestShortVideoMessage.cs" />
     <Compile Include="Model\Request\RequestTemplateEventMessage.cs" />
     <Compile Include="Model\Request\RequestTextMessage.cs" />
     <Compile Include="Model\Request\RequestVideoMessage.cs" />
