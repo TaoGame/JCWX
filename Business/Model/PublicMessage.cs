@@ -566,39 +566,48 @@ namespace WX.Model
         public long MaxTimeCost { get; set; }
     }
 
-    public class KfSession
+    public class MaterialNews
     {
-        /// <summary>
-        /// 正在接待的客服，为空表示没有人在接待
-        /// </summary>
-        [JsonProperty("openid")]
-        public string OpenId { get; set; }
 
         /// <summary>
-        /// 会话接入的时间
+        /// 标题
         /// </summary>
-        [JsonProperty("createtime")]
-        public long Createtime { get; set; }
-    }
-
-    public class WaitCase
-    {
-        /// <summary>
-        /// 客户openid
-        /// </summary>
-        [JsonProperty("openid")]
-        public string OpenId { get; set; }
+        [JsonProperty("title")]
+        public string Title { get; set; }
 
         /// <summary>
-        /// 正在接待的客服，为空表示没有人在接待
+        /// 图文消息的封面图片素材id（必须是永久mediaID）
         /// </summary>
-        [JsonProperty("kf_account")]
-        public string KfAccount { get; set; }
+        [JsonProperty("thumb_media_id")]
+        public string ThumbMediaId { get; set; }
 
         /// <summary>
-        /// 会话接入的时间
+        /// 作者
         /// </summary>
-        [JsonProperty("createtime")]
-        public long Createtime { get; set; }
+        [JsonProperty("author")]
+        public string Author { get; set; }
+
+        /// <summary>
+        /// 图文消息的摘要，仅有单图文消息才有摘要，多图文此处为空
+        /// </summary>
+        [JsonProperty("digest")]
+        public string Digest { get; set; }
+
+        /// <summary>
+        /// 是否显示封面，0为false，即不显示，1为true，即显示
+        /// </summary>
+        [JsonProperty("show_cover_pic")]
+        public string ShowCoverPic { get; set; }
+        /// <summary>
+        /// 图文消息的具体内容，支持HTML标签，必须少于2万字符，小于1M，且此处会去除JS
+        /// </summary>
+        [JsonProperty("content")]
+        public string Content { get; set; }
+
+        /// <summary>
+        /// 图文消息的原文地址，即点击“阅读原文”后的URL
+        /// </summary>
+        [JsonProperty("content_source_url")]
+        public string ContentSourceUrl { get; set; }
     }
 }
