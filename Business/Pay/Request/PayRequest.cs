@@ -6,11 +6,13 @@ using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
 using WX.Common;
+using WX.Pay.Response;
 
 namespace WX.Pay.Request
 {
     [XmlRoot("xml")]
-    public abstract class PayRequest
+    public abstract class PayRequest<T>
+        where T : PayResponse
     {
         private string appid;
 
@@ -35,10 +37,10 @@ namespace WX.Pay.Request
         }
 
         /// <summary>
-        /// app密钥
+        /// API密钥,在商户后台进行设置，非AppSecret
         /// </summary>
         [XmlIgnore]
-        public string AppSecret { get; set; }
+        public string PayApiSecret { get; set; }
 
         private string mchid;
 
@@ -82,7 +84,7 @@ namespace WX.Pay.Request
             {
                 sb.AppendFormat("{0}={1}&", key, m_keyValue[key]);
             }
-            sb.AppendFormat("key={0}", AppSecret);
+            sb.AppendFormat("key={0}", PayApiSecret);
             return sb.ToString().Md5().ToUpper();
         }
 

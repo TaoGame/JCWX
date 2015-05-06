@@ -269,6 +269,8 @@
     <Compile Include="Model\WXMessage.cs" />
     <Compile Include="NotHandlerMessage.cs" />
     <Compile Include="OAuth\OAuthHelper.cs" />
+    <Compile Include="Pay\IPayApiClient.cs" />
+    <Compile Include="Pay\PayApiClient.cs" />
     <Compile Include="Pay\Request\PayCloseorderRequest.cs" />
     <Compile Include="Pay\Request\PayOrderqueryRequest.cs" />
     <Compile Include="Pay\Request\PayRefundQueryRequest.cs" />

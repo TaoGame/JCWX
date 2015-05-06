@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml.Serialization;
+using WX.Pay.Response;
 
 namespace WX.Pay.Request
 {
@@ -10,7 +11,7 @@ namespace WX.Pay.Request
     /// 提交退款申请后，通过调用该接口查询退款状态。退款有一定延时，用零钱支付的退款20分钟内到账，银行卡支付的退款3个工作日后重新查询退款状态。
     /// </summary>
     [XmlRoot(ElementName = "xml", DataType="string")]
-    public class PayRefundQueryRequest : PayRequest
+    public class PayRefundQueryRequest : PayRequest<PayRefundQueryResponse>
     {
         public override string Url
         {

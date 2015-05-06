@@ -118,6 +118,7 @@
     <Compile Include="Api\OAuthRefreshTokenTest.cs" />
     <Compile Include="Pay\PayTest.cs" />
     <Compile Include="Pay\PayUnifiedorderTest.cs" />
+    <Compile Include="Pay\ReallyPayUnifiedorderRequestTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Api\QrCreatedRequestTestTest.cs" />
     <Compile Include="Api\RequestMessageTest.cs" />

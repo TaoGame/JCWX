@@ -7,7 +7,7 @@ using System.Xml.Serialization;
 namespace WX.Pay.Response
 {
     [XmlRoot("xml")]
-    public abstract class PayResponse
+    public class PayResponse
     {
         /// <summary>
         /// 返回状态码

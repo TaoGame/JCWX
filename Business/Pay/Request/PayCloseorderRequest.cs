@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml.Serialization;
+using WX.Pay.Response;
 
 namespace WX.Pay.Request
 {
     [XmlRoot("xml")]
-    public class PayCloseorderRequest : PayRequest
+    public class PayCloseorderRequest : PayRequest<PayCloseorderResponse>
     {
         [XmlIgnore]
         public override string Url
