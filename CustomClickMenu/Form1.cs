@@ -291,5 +291,55 @@ namespace CustomClickMenu
             File.WriteAllText(s_appfilename, appId + "|" + appSecret);
             MessageBox.Show("保存文件成功");
         }
+
+        private void textBox1_Click(object sender, EventArgs e)
+        {
+            this.openFileDialog1.ShowDialog(this);
+            this.textBox1.Text = this.openFileDialog1.FileName;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            var appId = tb_appId.Text.Trim();
+            var appSecret = tb_appSecret.Text.Trim();
+            ApiAccessTokenManager.Instance.SetAppIdentity(appId, appSecret);
+            IApiClient client = new DefaultApiClient();
+            var request = new MediaUploadRequest
+            {
+                AccessToken = ApiAccessTokenManager.Instance.GetCurrentToken(),
+                MediaType = GetMediaType(),
+                FilePath = textBox1.Text
+            };
+
+            var response = client.Execute(request);
+            if (response.IsError)
+            {
+                MessageBox.Show("错误：" + response.ErrorMessage);
+            }
+            else
+            {
+                MessageBox.Show("保存成功！mediaid:" + response.MediaId);
+            }
+        }
+
+        private MediaType GetMediaType()
+        {
+            switch (this.comboBox1.Text)
+            {
+                case "视频":
+                    return MediaType.Video;
+                    break;
+                case "音频":
+                    return MediaType.Voice;
+                    break;
+                case "缩略图":
+                    return MediaType.Thumb;
+                    break;
+                case "图片":
+                default:
+                    return MediaType.Image;
+                    break;
+            }
+        }
     }
 }

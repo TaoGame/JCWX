@@ -7,6 +7,14 @@ using WX.Model.ApiResponses;
 
 namespace WX.Model.ApiRequests
 {
+    /// <summary>
+    /// 注意事项
+    ///上传的临时多媒体文件有格式和大小限制，如下：
+    ///图片（image）: 1M，支持JPG格式
+    ///语音（voice）：2M，播放长度不超过60s，支持AMR\MP3格式
+    ///视频（video）：10MB，支持MP4格式
+    ///缩略图（thumb）：64KB，支持JPG格式
+    /// </summary>
     public class MediaUploadRequest : ApiRequest<MediaUploadResponse>
     {
         public string FilePath { get; set; }

@@ -610,4 +610,41 @@ namespace WX.Model
         [JsonProperty("content_source_url")]
         public string ContentSourceUrl { get; set; }
     }
+
+
+    public class KfSession
+    {
+        /// <summary>
+        /// 正在接待的客服，为空表示没有人在接待
+        /// </summary>
+        [JsonProperty("openid")]
+        public string OpenId { get; set; }
+
+        /// <summary>
+        /// 会话接入的时间
+        /// </summary>
+        [JsonProperty("createtime")]
+        public long Createtime { get; set; }
+    }
+
+    public class WaitCase
+    {
+        /// <summary>
+        /// 客户openid
+        /// </summary>
+        [JsonProperty("openid")]
+        public string OpenId { get; set; }
+
+        /// <summary>
+        /// 正在接待的客服，为空表示没有人在接待
+        /// </summary>
+        [JsonProperty("kf_account")]
+        public string KfAccount { get; set; }
+
+        /// <summary>
+        /// 会话接入的时间
+        /// </summary>
+        [JsonProperty("createtime")]
+        public long Createtime { get; set; }
+    }
 }
