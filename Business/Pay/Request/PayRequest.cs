@@ -69,6 +69,10 @@ namespace WX.Pay.Request
             {
                 return CreateSign();
             }
+            set
+            {
+                throw new NotImplementedException();
+            }
         }
 
         private string CreateSign()

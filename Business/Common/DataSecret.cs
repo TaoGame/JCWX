@@ -18,7 +18,7 @@ namespace WX.Common
             {
                 // 将得到的字符串使用十六进制类型格式。格式后的字符是小写的字母，如果使用大写（X）则格式后的字符是大写字符
 
-                result = result + s[i].ToString("X");
+                result = result + s[i].ToString("X2");
 
             }
 
