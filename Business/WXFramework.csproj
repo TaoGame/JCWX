@@ -272,12 +272,14 @@
     <Compile Include="Pay\IPayApiClient.cs" />
     <Compile Include="Pay\PayApiClient.cs" />
     <Compile Include="Pay\Request\PayCloseorderRequest.cs" />
+    <Compile Include="Pay\Request\PayDownloadbillRequest.cs" />
     <Compile Include="Pay\Request\PayOrderqueryRequest.cs" />
     <Compile Include="Pay\Request\PayRefundQueryRequest.cs" />
     <Compile Include="Pay\Request\PayRefundRequest.cs" />
     <Compile Include="Pay\Request\PayRequest.cs" />
     <Compile Include="Pay\Request\PayUnifiedOrderRequest.cs" />
     <Compile Include="Pay\Response\PayCloseorderResponse.cs" />
+    <Compile Include="Pay\Response\PayDownloadResponse.cs" />
     <Compile Include="Pay\Response\PayOrderqueryResponse.cs" />
     <Compile Include="Pay\Response\PayRefundQueryResponse.cs" />
     <Compile Include="Pay\Response\PayRefundResponse.cs" />
