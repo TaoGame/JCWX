@@ -20,7 +20,7 @@
 4、订单查询及退款查询接口暂时不要用，还没有完善
 5、对账单下载接口
 
-详细内容请参考：https://github.com/JamesYing/JCWX/wiki/V4.1%E7%89%88%E6%9C%AC%E5%8F%91%E5%B8%83%EF%BC%8C%E6%B7%BB%E5%8A%A0%E4%BA%86%E9%83%A8%E5%88%86%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98%E5%8A%9F%E8%83%BD
+详细内容请参考：[项目wiki](https://github.com/JamesYing/JCWX/wiki/V4.1%E7%89%88%E6%9C%AC%E5%8F%91%E5%B8%83%EF%BC%8C%E6%B7%BB%E5%8A%A0%E4%BA%86%E9%83%A8%E5%88%86%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98%E5%8A%9F%E8%83%BD)
 
 ---------------------------------------------------------------------------
 更新日期：2015-1-26
