@@ -10,6 +10,7 @@ using WX.Pay;
 using WX.Pay.Request;
 using WX.Pay.Response;
 using Xunit;
+using System.Configuration;
 
 namespace FrameworkCoreTest.Pay
 {
@@ -18,7 +19,7 @@ namespace FrameworkCoreTest.Pay
         where K : PayResponse, new ()
     {
         [Fact]
-        public void StepTest()
+        public void MockTest()
         {
             T request = GetRequest();
             Console.WriteLine("step start......");
@@ -31,6 +32,11 @@ namespace FrameworkCoreTest.Pay
             Console.WriteLine(k.AppId);
             Console.WriteLine(k.DeviceInfo);
             Assert.IsType<K>(k);
+            var pro = k.GetType().GetProperties();
+            foreach (var p in pro)
+            {
+                Console.WriteLine("{0}:{1}", p.Name, JsonConvert.SerializeObject(p.GetValue(k)));
+            }
         }
 
         [Fact]
@@ -38,6 +44,11 @@ namespace FrameworkCoreTest.Pay
         {
             var client = new PayApiClient();
             T request = GetRequest();
+            request.AppId = ConfigurationManager.AppSettings["wxappid"];
+            request.MchId = ConfigurationManager.AppSettings["mchid"];
+            request.PayApiSecret = ConfigurationManager.AppSettings["paysecret"];
+
+
             client.Logger = new Logger();
             Console.WriteLine("step start......");
             Console.WriteLine("api url:{0}", request.Url);

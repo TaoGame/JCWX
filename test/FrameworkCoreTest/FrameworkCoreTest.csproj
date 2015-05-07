@@ -40,6 +40,7 @@
       <HintPath>..\..\packages\Newtonsoft.Json.6.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -116,6 +117,8 @@
     <Compile Include="Api\OAuthAccessTokenTest.cs" />
     <Compile Include="Api\OAuthManagerTest.cs" />
     <Compile Include="Api\OAuthRefreshTokenTest.cs" />
+    <Compile Include="Pay\PayOrderQueryTest.cs" />
+    <Compile Include="Pay\PayRefundTest.cs" />
     <Compile Include="Pay\PayTest.cs" />
     <Compile Include="Pay\PayUnifiedorderTest.cs" />
     <Compile Include="Pay\ReallyPayUnifiedorderRequestTest.cs" />

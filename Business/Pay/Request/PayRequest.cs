@@ -82,7 +82,10 @@ namespace WX.Pay.Request
             var sb = new StringBuilder();
             foreach (var key in m_keyValue.Keys)
             {
-                sb.AppendFormat("{0}={1}&", key, m_keyValue[key]);
+                if (!String.IsNullOrEmpty(m_keyValue[key]))
+                {
+                    sb.AppendFormat("{0}={1}&", key, m_keyValue[key]);
+                }
             }
             sb.AppendFormat("key={0}", PayApiSecret);
             return sb.ToString().Md5().ToUpper();
@@ -107,6 +110,8 @@ namespace WX.Pay.Request
 
         [XmlIgnore]
         public abstract string Url { get; }
+
+        protected XmlDocument _doc = new XmlDocument();
 
         public String Serializable()
         {

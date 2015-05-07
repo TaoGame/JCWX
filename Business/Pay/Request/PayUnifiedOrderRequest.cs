@@ -2,11 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Xml;
 using System.Xml.Serialization;
 using WX.Pay.Response;
 
 namespace WX.Pay.Request
 {
+    /// <summary>
+    /// 统一下单
+    /// 除被扫支付场景以外，商户系统先调用该接口在微信支付服务后台生成预支付交易单，返回正确的预支付交易回话标识后再按扫码、JSAPI、APP等不同场景生成交易串调起支付。
+    /// </summary>
     [XmlRoot(ElementName = "xml", DataType = "string")]
     public class PayUnifiedOrderRequest : PayRequest<PayUnifiedOrderResponse>
     {
@@ -78,7 +83,8 @@ namespace WX.Pay.Request
         /// <summary>
         /// 商品详情 商品名称明细列表
         /// </summary>
-        [XmlElement("detail")]
+        //[XmlElement("detail")]
+        [XmlIgnore]
         public string Detail
         {
             get { return detail; }
@@ -86,10 +92,20 @@ namespace WX.Pay.Request
             {
                 if (!String.IsNullOrEmpty(value))
                 {
-                    device_info = value;
-                    PushKeyValue("device_info", value);
+                    detail = value;
+                    PushKeyValue("detail", value);
                 }
             }
+        }
+
+        /// <summary>
+        /// 请勿赋值
+        /// </summary>
+        [XmlElement("detail")]
+        public XmlCDataSection CDetail
+        {
+            get { return _doc.CreateCDataSection(detail); }
+            set { ;}
         }
 
         private string attach;

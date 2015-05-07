@@ -107,5 +107,11 @@ namespace WX.Pay.Response
         /// </summary>
         [XmlElement("time_end")]
         public string TimeEnd { get; set; }
+
+        /// <summary>
+        /// 交易状态描述
+        /// </summary>
+        [XmlElement("trade_state_desc")]
+        public string TradeStateDesc { get; set; }
     }
 }

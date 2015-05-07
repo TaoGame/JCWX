@@ -34,6 +34,12 @@ namespace WX.Pay.Response
         public string RefundId { get; set; }
 
         /// <summary>
+        /// 退款渠道 ORIGINAL—原路退款 BALANCE—退回到余额
+        /// </summary>
+        [XmlElement("refund_channel")]
+        public string RefundChannel { get; set; }
+
+        /// <summary>
         /// 退款金额
         /// </summary>
         [XmlElement("refund_fee")]
@@ -42,7 +48,8 @@ namespace WX.Pay.Response
         /// <summary>
         /// 退款货币种类
         /// </summary>
-        [XmlElement("refund_fee_type")]
+        [XmlIgnore]
+        [Obsolete]
         public string RefundFeeType { get; set; }
 
         /// <summary>
@@ -66,7 +73,8 @@ namespace WX.Pay.Response
         /// <summary>
         /// 货币种类
         /// </summary>
-        [XmlElement("cash_fee_type")]
+        [XmlIgnore]
+        [Obsolete]
         public string CashFeeType { get; set; }
 
         /// <summary>
@@ -78,7 +86,8 @@ namespace WX.Pay.Response
         /// <summary>
         /// 现金退款货币类型
         /// </summary>
-        [XmlElement("cash_refund_fee_type")]
+        [XmlIgnore]
+        [Obsolete]
         public string CashRefundFeeType { get; set; }
 
         /// <summary>
@@ -93,6 +102,12 @@ namespace WX.Pay.Response
         /// </summary>
         [XmlElement("coupon_count")]
         public int CouponCount { get; set; }
+
+        /// <summary>
+        /// 代金券或立减优惠ID
+        /// </summary>
+        [XmlElement("coupon_refund_id")]
+        public string CouponRefundId { get; set; }
 
         //代金券或立减优惠批次ID
         //coupon_batch_id_$n

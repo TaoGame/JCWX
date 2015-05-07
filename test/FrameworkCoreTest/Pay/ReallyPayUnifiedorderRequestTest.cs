@@ -16,16 +16,14 @@ namespace FrameworkCoreTest.Pay
 
             return new PayUnifiedOrderRequest
             {
-                AppId = "xxxx",
-                MchId = "xxxx",
-                PayApiSecret = "xxxx",
+                
                 Attach = "测试支付订单",
                 Body = "测试支付订单",
                 Detail = "测试支付订单",
                 DeviceInfo = "test pay order",
                 NonceStr = "123123",
                 NotifyUrl = "http://www.sh-bus.com",
-                OutTradeNo = "DB123123123",
+                OutTradeNo = "DB123123124",
                 ProductId = "123123",
                 SpbillCreateIp = "127.0.0.1",
                 TimeStart = date.ToString("yyyyMMddHHmmss"),
