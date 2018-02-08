@@ -53,7 +53,7 @@ namespace FrameworkCoreTest
 
         private string GetToken()
         {
-            var token = GetCurrentToken();
+            var token = ApiAccessTokenManager.Instance.GetCurrentToken();
             var expirtime = ApiAccessTokenManager.Instance.ExpireTime;
             File.WriteAllText(tokenfile, token + "|" + expirtime.ToString(), Encoding.UTF8);
 
