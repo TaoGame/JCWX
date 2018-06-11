@@ -59,6 +59,7 @@
     <Compile Include="Common\ShelfModuleConverter.cs" />
     <Compile Include="CustomAccount.cs" />
     <Compile Include="Logger\ILogger.cs" />
+    <Compile Include="Model\ApiRequests\AccessTokenCodeRequest.cs" />
     <Compile Include="Model\ApiRequests\ApiGetNeedTokenRequest.cs" />
     <Compile Include="Model\ApiRequests\ApiPostNeedTokenRequest.cs" />
     <Compile Include="Model\ApiRequests\CustomserviceGetkflistRequest.cs" />
@@ -167,6 +168,7 @@
     <Compile Include="Model\ApiRequests\UserGetRequest.cs" />
     <Compile Include="Model\ApiRequests\UserInfoRequest.cs" />
     <Compile Include="Model\ApiRequests\UserInfoUpdateremarkRequest.cs" />
+    <Compile Include="Model\ApiResponses\AccessTokenCodeResponse.cs" />
     <Compile Include="Model\ApiResponses\AccessTokenResponse.cs" />
     <Compile Include="Model\ApiResponses\ApiResponse.cs" />
     <Compile Include="Api\DefaultApiClient.cs" />
