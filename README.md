@@ -50,5 +50,3 @@
 八、[微信快速开发框架V2.3--增加语音识别及网页获取用户信息](http://www.cnblogs.com/inday/p/wechat-public-platform-v2-3.html)
 
 ----------------------------------------------------------------------------
-如果您觉得好，也可以通过以下二维码捐助我：
-![image](https://mobilecodec.alipay.com/show.htm?code=apkk7iarj6b5z7ik7f&picSize=L)
